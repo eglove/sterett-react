@@ -5,8 +5,9 @@ import { getGalleryImagesCountQueryOptions } from "../../sanity/queries/get-gall
 import { Link } from "../link.tsx";
 
 const navUrls = [
+  { name: "Home", url: "/" },
   {
-    name: "News & Events",
+    name: "News",
     url: "/news/",
   },
   {

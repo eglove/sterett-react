@@ -5,6 +5,10 @@
   "description": "Homepage of the Sterett Creek Village Trustee Board",
   "start_url": "/",
   "lang": "en",
+  "orientation": "any",
+  "launch_handler": {
+    "client_mode": ["focus-existing", "auto"]
+  },
   "icons":  [
     {
       "src": "/android-chrome-192x192.png",
