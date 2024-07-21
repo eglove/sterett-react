@@ -1,6 +1,10 @@
 {
   "name": "Sterett Creek Village Trustee",
-  "short_name": "SCVT",
+  "short_name": "Sterett Trustee",
+  "id": "scvt",
+  "description": "Homepage of the Sterett Creek Village Trustee Board",
+  "start_url": "/",
+  "lang": "en",
   "icons":  [
     {
       "src": "/android-chrome-192x192.png",
