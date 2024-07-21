@@ -1,10 +1,10 @@
-import { Link } from "@nextui-org/link";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { createRoute } from "@tanstack/react-router";
 
 import { Container } from "../components/container.tsx";
 import { EmptyContent } from "../components/empty-content.tsx";
 import { MainLayout } from "../components/layouts/main-layout.tsx";
+import { Link } from "../components/link.tsx";
 import { rootRoute } from "../router/router.tsx";
 import { getAllPagesQueryOptions } from "../sanity/queries/get-all-pages.ts";
 import { getRouteQueries } from "../util/get-route-queries.ts";

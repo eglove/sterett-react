@@ -1,12 +1,12 @@
 import type { AvatarProps } from "@nextui-org/avatar";
 
-import { Link } from "@nextui-org/link";
 import { User } from "@nextui-org/user";
 import shuffle from "lodash/shuffle";
 
 import type { GetTrusteesReturn } from "../sanity/queries/get-trustees.ts";
 
 import { sanityImage } from "../clients/sanity/sanity-client.ts";
+import { Link } from "./link.tsx";
 
 type TrusteeProperties = {
   readonly index: number;

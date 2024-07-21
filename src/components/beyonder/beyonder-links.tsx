@@ -1,5 +1,6 @@
 import { EnvelopeIcon, LinkIcon, PhoneIcon } from "@heroicons/react/24/outline";
-import { Link } from "@nextui-org/link";
+
+import { Link } from "../link";
 
 export function BeyonderLinks() {
   return (

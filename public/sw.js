@@ -36,7 +36,9 @@ self.addEventListener('fetch', async (event) => {
 })
 
 async function fetchAndUpdateCache (cache, request) {
-	const response = await fetch(request)
+	const response = await fetch(request).catch(error => {
+		console.error(error);
+	})
 
 	if (response.ok) {
 		cache.put(request, response.clone()) // clone the response because put() consumes the body

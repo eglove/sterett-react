@@ -1,6 +1,6 @@
-import { Link } from "@nextui-org/link";
-
 import type { GetFilesSchema } from "../sanity/queries/get-files.ts";
+
+import { Link } from "./link.tsx";
 
 type DocumentLinkProperties = {
   readonly document: GetFilesSchema;

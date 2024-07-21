@@ -1,8 +1,8 @@
-import { Link } from "@nextui-org/link";
 import { NavbarItem } from "@nextui-org/navbar";
 import { useSuspenseQuery } from "@tanstack/react-query";
 
 import { getGalleryImagesCountQueryOptions } from "../../sanity/queries/get-gallery-images-count.ts";
+import { Link } from "../link.tsx";
 
 const navUrls = [
   {

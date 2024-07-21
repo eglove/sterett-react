@@ -1,5 +1,6 @@
-import { Link } from "@nextui-org/link";
 import { NavbarBrand } from "@nextui-org/navbar";
+
+import { Link } from "../link";
 
 export function NavigationHome() {
   return (
