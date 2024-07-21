@@ -1,3 +1,6 @@
 {
-  "extends": ["@tsconfig/strictest", "@tsconfig/vite-react"]
+  "extends": ["@tsconfig/strictest", "@tsconfig/vite-react"],
+  "compilerOptions": {
+    "lib": ["ESNext", "DOM"]
+  }
 }

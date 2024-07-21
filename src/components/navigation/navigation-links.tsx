@@ -2,6 +2,7 @@ import { NavbarItem } from "@nextui-org/navbar";
 import { useSuspenseQuery } from "@tanstack/react-query";
 
 import { getGalleryImagesCountQueryOptions } from "../../sanity/queries/get-gallery-images-count.ts";
+import { noSlash } from "../../util/string.ts";
 import { Link } from "../link.tsx";
 
 const navUrls = [
@@ -35,7 +36,7 @@ export function NavigationLinks() {
         return (
           <NavbarItem
             className="text-sky-700"
-            isActive={location.pathname === item.url}
+            isActive={noSlash(location.pathname) === noSlash(item.url)}
             key={item.name}
           >
             <Link href={item.url}>{item.name}</Link>
