@@ -1,11 +1,11 @@
 import { NextUIProvider } from "@nextui-org/react";
 import { QueryClient } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { PersistQueryClientProvider } from "@tanstack/react-query-persist-client";
 import { Outlet } from "@tanstack/react-router";
-import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 
 import { persister } from "../clients/react-query/persister.ts";
+import { QueryDevelopmentTools } from "../components/query-development-tools.tsx";
+import { RouterDevelopmentTools } from "../components/router-development-tools.tsx";
 
 export const queryClient = new QueryClient({
   defaultOptions: {
@@ -24,8 +24,8 @@ function App() {
     >
       <NextUIProvider>
         <Outlet />
-        <TanStackRouterDevtools />
-        <ReactQueryDevtools />
+        <RouterDevelopmentTools />
+        <QueryDevelopmentTools />
       </NextUIProvider>
     </PersistQueryClientProvider>
   );
