@@ -1,7 +1,7 @@
 {
-  "name": "",
-  "short_name": "",
-  "icons": [
+  "name": "Sterett Creek Village Trustee",
+  "short_name": "SCVT",
+  "icons":  [
     {
       "src": "/android-chrome-192x192.png",
       "sizes": "192x192",

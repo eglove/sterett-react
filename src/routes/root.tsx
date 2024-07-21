@@ -10,8 +10,8 @@ import { RouterDevelopmentTools } from "../components/router-development-tools.t
 export const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      gcTime: 1000 * 60 * 60, // 1 hour
-      staleTime: 1000 * 60 * 60,
+      gcTime: 1000 * 60, // 1 minute
+      staleTime: 1000 * 60,
     },
   },
 });
