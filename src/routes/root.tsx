@@ -1,9 +1,7 @@
 import { NextUIProvider } from "@nextui-org/react";
-import { QueryClient } from "@tanstack/react-query";
-import { PersistQueryClientProvider } from "@tanstack/react-query-persist-client";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Outlet } from "@tanstack/react-router";
 
-import { persister } from "../clients/react-query/persister.ts";
 import { QueryDevelopmentTools } from "../components/query-development-tools.tsx";
 import { RouterDevelopmentTools } from "../components/router-development-tools.tsx";
 
@@ -18,16 +16,13 @@ export const queryClient = new QueryClient({
 
 function App() {
   return (
-    <PersistQueryClientProvider
-      client={queryClient}
-      persistOptions={{ persister }}
-    >
+    <QueryClientProvider client={queryClient}>
       <NextUIProvider>
         <Outlet />
         <RouterDevelopmentTools />
         <QueryDevelopmentTools />
       </NextUIProvider>
-    </PersistQueryClientProvider>
+    </QueryClientProvider>
   );
 }
 

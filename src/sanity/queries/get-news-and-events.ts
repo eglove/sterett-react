@@ -39,7 +39,7 @@ export async function getNewsAndEvents() {
   }).set({ hour: 0, millisecond: 0, minute: 0, second: 0 });
   const formattedDate = today.toFormat("yyyy-LL-dd");
 
-  const eventQuery = `
+  const eventQuery = ` 
     *[_type == "calendarEvent" 
     && (startsAt >= "${formattedDate}" || endsAt >= "${formattedDate}") 
     && ${NO_DRAFTS}] | order(startsAt asc){_id, title, startsAt, endsAt, description}`;
