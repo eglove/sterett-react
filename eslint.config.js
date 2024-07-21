@@ -1,3 +1,4 @@
+// @ts-nocheck
 import config from "@ethang/eslint-config/eslint.config.js";
 import tseslint from "typescript-eslint";
 

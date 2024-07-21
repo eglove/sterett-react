@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 /* eslint-disable unicorn/no-abusive-eslint-disable */
 /* eslint-disable */
 self.addEventListener('install', async () => {
