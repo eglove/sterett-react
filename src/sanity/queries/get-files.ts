@@ -8,6 +8,8 @@ import {
 
 export type GetFilesSchema = {
   _id: string;
+  category: string;
+  date: string;
   file: {
     asset: {
       url: string;

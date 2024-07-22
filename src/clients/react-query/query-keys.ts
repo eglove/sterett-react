@@ -6,6 +6,8 @@ export const queryKeys = {
   getEvents: "getEvents",
   getfiles: "getfiles",
   getGalleryImages: "getGalleryImages",
+  getGeneralCovenantFiles: "getGeneralCovenantFiles",
+  getMeetingMinutesFiles: "getMeetingMinutesFiles",
   getNewsAndEvents: "getNewsAndEvents",
   getPage: "getPage",
   getTrustees: "getTrustees",

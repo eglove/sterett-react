@@ -2,15 +2,17 @@ import { createRoute } from "@tanstack/react-router";
 
 import { Container } from "../components/container.tsx";
 import { EmptyContent } from "../components/empty-content.tsx";
-import { FileGrid } from "../components/files/file-grid.tsx";
+import { FileTable } from "../components/files/file-table.tsx";
 import { MainLayout } from "../components/layouts/main-layout.tsx";
 import { rootRoute } from "../router/router.tsx";
-import { getFilesQueryOptions } from "../sanity/queries/get-files.ts";
+import { getGeneralCovenantFilesQueryOptions } from "../sanity/queries/get-general-covenant-files.ts";
+import { getMeetingMinutesFilesQueryOptions } from "../sanity/queries/get-meeting-minutes-files.ts";
 import { getRouteQueries } from "../util/get-route-queries.ts";
 import { setMeta } from "../util/set-meta.ts";
 
 export const filesRouteQueries = {
-  files: getFilesQueryOptions(),
+  generalCovenantFiles: getGeneralCovenantFilesQueryOptions(),
+  meetingMinutesFiles: getMeetingMinutesFilesQueryOptions(),
 };
 
 export const filesRoute = createRoute({
@@ -34,8 +36,9 @@ export const filesRoute = createRoute({
 export function FilesRoute() {
   return (
     <MainLayout>
-      <Container>
-        <FileGrid />
+      <Container styleNames="grid lg:grid-cols-2 place-items-start">
+        <FileTable query="generalCovenantFiles" />
+        <FileTable query="meetingMinutesFiles" />
       </Container>
     </MainLayout>
   );
