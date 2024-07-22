@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { Dispatch, SetStateAction, useEffect } from "react";
 
 import { CalendarDaysIcon } from "@heroicons/react/24/solid";

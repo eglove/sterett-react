@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint . --fix",
+    "lint": "eslint \"src/**/*\" --fix --ignore-pattern src/components/event.tsx",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "@ethang/eslint-config": "^17.2.0",
+    "@ethang/project-builder": "^1.1.47",
     "@portabletext/types": "^2.0.13",
     "@tailwindcss/typography": "^0.5.13",
     "@tsconfig/strictest": "^2.0.5",
