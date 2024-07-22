@@ -19,10 +19,6 @@ const columns = [
     key: "title",
     label: "Title",
   },
-  {
-    key: "date",
-    label: "Date",
-  },
 ];
 
 type FileTableProperties = {
