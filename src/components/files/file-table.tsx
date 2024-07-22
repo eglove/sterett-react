@@ -41,11 +41,11 @@ export function FileTable({ query }: FileTableProperties) {
         classNames={{
           base: "max-h-96 overflow-auto",
         }}
-        aria-label="Sterett Creek Village Trustee General Files"
+        aria-label="Sterett Creek Village Trustee Files"
         color="primary"
         onSortChange={setSortConfig}
         sortDescriptor={sortConfig}
-        title="Sterett Creek Village Trustee General Files"
+        title="Sterett Creek Village Trustee Files"
       >
         <TableHeader columns={columns}>
           {(column) => {
