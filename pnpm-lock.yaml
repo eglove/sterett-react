@@ -123,9 +123,6 @@ importers:
       eslint:
         specifier: ^9.7.0
         version: 9.7.0
-      eslint-plugin-sonarjs:
-        specifier: 1.0.4
-        version: 1.0.4(eslint@9.7.0)
       postcss:
         specifier: ^8.4.39
         version: 8.4.39
