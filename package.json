@@ -22,7 +22,7 @@
     "@tanstack/react-query-persist-client": "^5.51.15",
     "@tanstack/react-router": "^1.45.11",
     "@tanstack/router-devtools": "^1.45.11",
-    "framer-motion": "^11.3.17",
+    "framer-motion": "^11.3.19",
     "idb-keyval": "^6.2.1",
     "lodash": "^4.17.21",
     "luxon": "^3.4.4",
@@ -35,7 +35,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@ethang/eslint-config": "^17.5.0",
+    "@ethang/eslint-config": "^17.5.1",
     "@ethang/project-builder": "^1.1.49",
     "@portabletext/types": "^2.0.13",
     "@tailwindcss/typography": "^0.5.13",
@@ -49,7 +49,7 @@
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.19",
-    "eslint": "^9.7.0",
+    "eslint": "^9.8.0",
     "postcss": "^8.4.40",
     "prettier": "^3.3.3",
     "rimraf": "^6.0.1",
