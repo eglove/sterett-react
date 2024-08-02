@@ -71,7 +71,7 @@ export function AddToCalendar({
       </DropdownTrigger>
       <DropdownMenu aria-label="Calendar Options" selectionMode="single">
         <DropdownItem key="ics" onPress={handlePress("ics")}>
-          Apple
+          Apple / ICS
         </DropdownItem>
         <DropdownItem key="google" onPress={handlePress("google")}>
           Google
