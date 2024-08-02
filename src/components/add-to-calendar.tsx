@@ -70,6 +70,9 @@ export function AddToCalendar({
         <Button {...buttonProps}>Add To Calendar</Button>
       </DropdownTrigger>
       <DropdownMenu aria-label="Calendar Options" selectionMode="single">
+        <DropdownItem key="ics" onPress={handlePress("ics")}>
+          Apple
+        </DropdownItem>
         <DropdownItem key="google" onPress={handlePress("google")}>
           Google
         </DropdownItem>
@@ -81,9 +84,6 @@ export function AddToCalendar({
         </DropdownItem>
         <DropdownItem key="yahoo" onPress={handlePress("yahoo")}>
           Yahoo
-        </DropdownItem>
-        <DropdownItem key="ics" onPress={handlePress("ics")}>
-          ICS
         </DropdownItem>
       </DropdownMenu>
     </Dropdown>
