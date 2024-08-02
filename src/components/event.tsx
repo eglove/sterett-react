@@ -132,10 +132,10 @@ export function Event({
             <CardBody>
               <SanityContent styleNames={textColor} value={data.description} />
             </CardBody>
-            <Divider />
           </>
         )}
         <CardFooter className="flex gap-2 flex-wrap">
+            <Divider />
           <Dropdown>
             <DropdownTrigger>
               <Button className="bg-sky-600 text-white" size="sm">
