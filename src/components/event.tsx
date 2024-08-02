@@ -1,3 +1,4 @@
+import type { PortableTextBlock } from "@portabletext/types";
 import type { Dispatch, SetStateAction } from "react";
 
 import { CalendarDaysIcon } from "@heroicons/react/24/solid";
@@ -12,6 +13,8 @@ import {
   DropdownTrigger,
 } from "@nextui-org/react";
 import { google, ics, office365, outlook, yahoo } from "calendar-link";
+import attempt from "lodash/attempt";
+import isError from "lodash/isError";
 import isNil from "lodash/isNil";
 import { DateTime } from "luxon";
 import { Fragment, useEffect, useState } from "react";
@@ -53,6 +56,29 @@ function openNewTab(url: string) {
   }
 }
 
+function toPlainText(blocks: PortableTextBlock[] = []) {
+  const result = attempt(() => {
+    return blocks
+      .map((block) => {
+        if ("block" !== block._type || !block.children) {
+          return "";
+        }
+        return block.children
+          .map((child) => {
+            return child.text;
+          })
+          .join("");
+      })
+      .join("\n\n");
+  });
+
+  if (isError(result)) {
+    return "";
+  }
+
+  return result;
+}
+
 export function Event({
   colors,
   data,
@@ -72,7 +98,9 @@ export function Event({
     : colors.eventText;
 
   const calendarData = {
-    description: "",
+    description: isNil(data.description)
+      ? ""
+      : toPlainText(data.description as PortableTextBlock[]),
     end: data.endsAt,
     start: data.startsAt,
     title: data.title,
