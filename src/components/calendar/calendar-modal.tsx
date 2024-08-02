@@ -9,6 +9,7 @@ import {
 
 import type { CalendarComponentEvent } from "../../routes/calendar.tsx";
 
+import { AddToCalendar } from "../add-to-calendar.tsx";
 import { CalendarModalContent } from "./calendar-modal-content.tsx";
 
 type CalendarModalProperties = {
@@ -33,7 +34,12 @@ export function CalendarModal({
                 <CalendarModalContent selectedEvent={selectedEvent} />
               </ModalBody>
               <ModalFooter>
-                <Button color="primary" onClick={onClose}>
+                <AddToCalendar
+                  buttonProps={{ color: "primary" }}
+                  start={selectedEvent.start}
+                  title={selectedEvent.title}
+                />
+                <Button color="danger" onClick={onClose}>
                   Close
                 </Button>
               </ModalFooter>

@@ -2,19 +2,8 @@ import type { PortableTextBlock } from "@portabletext/types";
 import type { Dispatch, SetStateAction } from "react";
 
 import { CalendarDaysIcon } from "@heroicons/react/24/solid";
-import { Button } from "@nextui-org/button";
-import { Card, CardBody, CardHeader } from "@nextui-org/card";
+import { Card, CardBody, CardHeader, CardFooter } from "@nextui-org/card";
 import { Divider } from "@nextui-org/divider";
-import {
-  CardFooter,
-  Dropdown,
-  DropdownItem,
-  DropdownMenu,
-  DropdownTrigger,
-} from "@nextui-org/react";
-import { google, ics, office365, outlook, yahoo } from "calendar-link";
-import attempt from "lodash/attempt";
-import isError from "lodash/isError";
 import isNil from "lodash/isNil";
 import { DateTime } from "luxon";
 import { Fragment, useEffect, useState } from "react";
@@ -25,6 +14,7 @@ import type { CalendarEventReturn } from "../sanity/queries/get-news-and-events.
 import { getRelativeDate } from "../util/date.ts";
 import { eventRangeFormat } from "../util/event-range-format.ts";
 import { SanityContent } from "./sanity/sanity-content.tsx";
+import { AddToCalendar } from "./add-to-calendar.tsx";
 
 type EventProperties = {
   readonly colors?: {
@@ -50,35 +40,6 @@ function dateIsInRange(start: string, end: string) {
   return now >= startDate && now <= endDate;
 }
 
-function openNewTab(url: string) {
-  if ("undefined" !== typeof window) {
-    window.open(url, "_blank")?.focus();
-  }
-}
-
-function toPlainText(blocks: PortableTextBlock[] = []) {
-  const result = attempt(() => {
-    return blocks
-      .map((block) => {
-        if ("block" !== block._type || !block.children) {
-          return "";
-        }
-        return block.children
-          .map((child) => {
-            return child.text;
-          })
-          .join("");
-      })
-      .join("\n\n");
-  });
-
-  if (isError(result)) {
-    return "";
-  }
-
-  return result;
-}
-
 export function Event({
   colors,
   data,
@@ -96,15 +57,6 @@ export function Event({
   const textColor = isNil(colors?.eventText)
     ? "text-foreground"
     : colors.eventText;
-
-  const calendarData = {
-    description: isNil(data.description)
-      ? ""
-      : toPlainText(data.description as PortableTextBlock[]),
-    end: data.endsAt,
-    start: data.startsAt,
-    title: data.title,
-  };
 
   useEffect(() => {
       if (!usedDates?.has(relativeDate) && !isInRange) {
@@ -164,55 +116,13 @@ export function Event({
         )}
         <Divider />
         <CardFooter className="flex gap-2 flex-wrap">
-          <Dropdown>
-            <DropdownTrigger>
-              <Button className="bg-sky-600 text-white" size="sm">
-                Add To Calendar
-              </Button>
-            </DropdownTrigger>
-            <DropdownMenu aria-label="Calendar Options" selectionMode="single">
-              <DropdownItem
-                onPress={() => {
-                  openNewTab(google(calendarData));
-                }}
-                key="google"
-              >
-                Google
-              </DropdownItem>
-              <DropdownItem
-                onPress={() => {
-                  openNewTab(outlook(calendarData));
-                }}
-                key="outlook"
-              >
-                Outlook
-              </DropdownItem>
-              <DropdownItem
-                onPress={() => {
-                  openNewTab(office365(calendarData));
-                }}
-                key="office365"
-              >
-                Office 365
-              </DropdownItem>
-              <DropdownItem
-                onPress={() => {
-                  openNewTab(yahoo(calendarData));
-                }}
-                key="yahoo"
-              >
-                Yahoo
-              </DropdownItem>
-              <DropdownItem
-                onPress={() => {
-                  openNewTab(ics(calendarData));
-                }}
-                key="ics"
-              >
-                ICS
-              </DropdownItem>
-            </DropdownMenu>
-          </Dropdown>
+          <AddToCalendar
+              buttonProps={{className: "bg-sky-600 text-white", size: "sm"}}
+              title={data.title}
+              start={data.startsAt}
+              end={data.endsAt}
+              description={data.description as unknown as PortableTextBlock}
+          />
         </CardFooter>
       </Card>
     </Fragment>

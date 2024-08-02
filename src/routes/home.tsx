@@ -1,8 +1,10 @@
+import type { PortableTextBlock } from "@portabletext/types";
+
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { createRoute } from "@tanstack/react-router";
 import isNil from "lodash/isNil.js";
-import { Fragment } from "react";
 
+import { AddToCalendar } from "../components/add-to-calendar.tsx";
 import { Container } from "../components/container.tsx";
 import { EmptyContent } from "../components/empty-content.tsx";
 import { MainLayout } from "../components/layouts/main-layout.tsx";
@@ -53,16 +55,25 @@ export function HomeRoute() {
         <h2 className="text-2xl font-bold">Upcoming Events</h2>
         {events.map((event) => {
           return (
-            <Fragment key={event._id}>
+            <div className="block" key={event._id}>
               <p>
                 <strong>{event.title}</strong>
                 <br />
                 <span>{eventRangeFormat(event.startsAt, event.endsAt)}</span>
               </p>
               {!isNil(event.description) && (
-                <SanityContent value={event.description} />
+                <div className="prose">
+                  <SanityContent value={event.description} />
+                </div>
               )}
-            </Fragment>
+              <AddToCalendar
+                buttonProps={{ className: "bg-sky-600 text-white", size: "sm" }}
+                description={event.description as unknown as PortableTextBlock}
+                end={event.endsAt}
+                start={event.startsAt}
+                title={event.title}
+              />
+            </div>
           );
         })}
         <SanityContent value={data.content} />
