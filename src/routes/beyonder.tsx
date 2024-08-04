@@ -1,5 +1,6 @@
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { createRoute } from "@tanstack/react-router";
+import map from "lodash/map";
 
 import { BeyonderAddress } from "../components/beyonder/beyonder-address.tsx";
 import { BeyonderHero } from "../components/beyonder/beyonder-hero.tsx";
@@ -45,7 +46,7 @@ export function BeyonderRoute() {
         <BeyonderLinks />
         <BeyonderAddress />
         <div className="grid w-full gap-4 p-2">
-          {data.map((datum) => {
+          {map(data, (datum) => {
             return (
               <Event
                 colors={{

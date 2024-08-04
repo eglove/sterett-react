@@ -4,6 +4,7 @@ import { useDisclosure } from "@nextui-org/use-disclosure";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { createRoute } from "@tanstack/react-router";
 import isNil from "lodash/isNil.js";
+import map from "lodash/map";
 import { DateTime } from "luxon";
 // eslint-disable-next-line depend/ban-dependencies
 import moment from "moment";
@@ -56,7 +57,7 @@ export function CalendarRoute() {
   const [selectedEvent, setSelectedEvent] = useState<CalendarComponentEvent>();
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
-  const events = data.map((item) => {
+  const events = map(data, (item) => {
     return {
       description: item.description,
       end: DateTime.fromISO(item.endsAt, {

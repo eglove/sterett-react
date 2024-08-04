@@ -3,6 +3,7 @@ import type { PortableTextBlock } from "@portabletext/types";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { createRoute } from "@tanstack/react-router";
 import isNil from "lodash/isNil.js";
+import map from "lodash/map";
 
 import { AddToCalendar } from "../components/add-to-calendar.tsx";
 import { Container } from "../components/container.tsx";
@@ -53,7 +54,7 @@ export function HomeRoute() {
     <MainLayout>
       <Container>
         <h2 className="text-2xl font-bold">Upcoming Events</h2>
-        {events.map((event) => {
+        {map(events, (event) => {
           return (
             <div className="block" key={event._id}>
               <p>

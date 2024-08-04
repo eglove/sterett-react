@@ -1,5 +1,6 @@
 import { NavbarItem } from "@nextui-org/navbar";
 import { useSuspenseQuery } from "@tanstack/react-query";
+import map from "lodash/map";
 
 import { getGalleryImagesCountQueryOptions } from "../../sanity/queries/get-gallery-images-count.ts";
 import { noSlash } from "../../util/string.ts";
@@ -32,7 +33,7 @@ export function NavigationLinks() {
 
   return (
     <>
-      {navUrls.map((item) => {
+      {map(navUrls, (item) => {
         return (
           <NavbarItem
             className="text-sky-700"

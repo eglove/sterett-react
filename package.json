@@ -3,6 +3,10 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "browserslist": [
+    "defaults and fully supports es6-module",
+    "maintained node versions"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "rimraf dist && tsc -b && vite build",
@@ -11,7 +15,7 @@
   },
   "dependencies": {
     "@ethang/hooks": "^2.1.0",
-    "@ethang/toolbelt": "^3.5.0",
+    "@ethang/toolbelt": "^3.5.1",
     "@heroicons/react": "^2.1.5",
     "@nextui-org/react": "^2.4.6",
     "@portabletext/react": "^3.1.0",
@@ -36,7 +40,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@ethang/eslint-config": "^18.1.4",
+    "@ethang/eslint-config": "^18.1.8",
     "@ethang/project-builder": "^1.1.53",
     "@portabletext/types": "^2.0.13",
     "@tailwindcss/typography": "^0.5.13",

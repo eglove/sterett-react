@@ -1,6 +1,7 @@
 import { Image } from "@nextui-org/image";
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { createRoute } from "@tanstack/react-router";
+import map from "lodash/map";
 
 import { Container } from "../components/container.tsx";
 import { EmptyContent } from "../components/empty-content.tsx";
@@ -38,7 +39,7 @@ export function GalleryRoute() {
   return (
     <MainLayout>
       <Container styleNames="flex flex-wrap gap-4">
-        {data.map((image) => {
+        {map(data, (image) => {
           return (
             <Image
               alt={image.description}

@@ -2,6 +2,7 @@ import { useSuspenseQuery } from "@tanstack/react-query";
 import { createRoute } from "@tanstack/react-router";
 import isEmpty from "lodash/isEmpty.js";
 import isNil from "lodash/isNil.js";
+import map from "lodash/map";
 import { useState } from "react";
 
 import type {
@@ -53,7 +54,7 @@ export function NewsRoute() {
     <MainLayout>
       <Container styleNames="p-0">
         <div className="grid w-full p-2">
-          {data.map((datum) => {
+          {map(data, (datum) => {
             if (!isNil((datum as NewsUpdateReturn).date)) {
               return (
                 <NewsUpdate data={datum as NewsUpdateReturn} key={datum._id} />

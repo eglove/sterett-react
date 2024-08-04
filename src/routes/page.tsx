@@ -1,5 +1,6 @@
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { createRoute } from "@tanstack/react-router";
+import map from "lodash/map";
 
 import { Container } from "../components/container.tsx";
 import { EmptyContent } from "../components/empty-content.tsx";
@@ -38,7 +39,7 @@ export function PageRoute() {
   return (
     <MainLayout>
       <Container>
-        {data.map((page) => {
+        {map(data, (page) => {
           return (
             <div className="w-full" key={page._id}>
               <Link

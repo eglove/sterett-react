@@ -1,5 +1,6 @@
 import { useSuspenseQuery } from "@tanstack/react-query";
 import { createRoute } from "@tanstack/react-router";
+import map from "lodash/map";
 
 import { Container } from "../components/container.tsx";
 import { MainLayout } from "../components/layouts/main-layout.tsx";
@@ -38,7 +39,7 @@ export function TrusteesRoute() {
     <MainLayout>
       <Container>
         <div className="grid gap-4 md:grid-cols-3">
-          {data.map((trustee, index) => {
+          {map(data, (trustee, index) => {
             return (
               <Trustee index={index} key={trustee._id} trustee={trustee} />
             );

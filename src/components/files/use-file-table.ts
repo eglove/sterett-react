@@ -1,9 +1,12 @@
 import type { SortDescriptor } from "@nextui-org/react";
 
 import { useSuspenseQuery } from "@tanstack/react-query";
+import filterer from "lodash/filter";
+import includes from "lodash/includes";
 import isEmpty from "lodash/isEmpty";
 import isNil from "lodash/isNil";
 import orderBy from "lodash/orderBy";
+import toLower from "lodash/toLower";
 import { useMemo, useState } from "react";
 
 import { filesRouteQueries } from "../../routes/files.tsx";
@@ -28,13 +31,17 @@ export function useFileTable(query: keyof typeof filesRouteQueries) {
     }
 
     if (!isEmpty(filter)) {
-      sortedItems = sortedItems.filter((item) => {
+      sortedItems = filterer(sortedItems, (item) => {
         return (
-          item.title.toLowerCase().includes(filter.toLowerCase()) ||
-          new Date(item.date)
-            .toLocaleString(undefined, { dateStyle: "long" })
-            .toLowerCase()
-            .includes(filter.toLowerCase())
+          includes(toLower(item.title), toLower(filter)) ||
+          includes(
+            toLower(
+              new Date(item.date).toLocaleString(undefined, {
+                dateStyle: "long",
+              }),
+            ),
+            toLower(filter),
+          )
         );
       });
     }
