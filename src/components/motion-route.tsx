@@ -11,7 +11,7 @@ const pageTransition = {
   visible: { opacity: 1, transition },
 } satisfies AnimationProps["variants"];
 
-export function MotionRoute({ children }: PropsWithChildren) {
+export function MotionRoute({ children }: Readonly<PropsWithChildren>) {
   return (
     <motion.div
       animate="visible"

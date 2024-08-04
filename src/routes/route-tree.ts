@@ -1,7 +1,7 @@
 import { createRouter } from "@tanstack/react-router";
 
-import { rootRoute } from "../router/router.tsx";
-import { adminRoute } from "./admin.tsx";
+import { rootRoute } from "../router/router.ts";
+import { adminRoute } from "./admin.ts";
 import { beyonderRoute } from "./beyonder.tsx";
 import { calendarRoute } from "./calendar.tsx";
 import { filesRoute } from "./files.tsx";

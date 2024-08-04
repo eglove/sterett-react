@@ -5,7 +5,7 @@ import { Container } from "../components/container.tsx";
 import { EmptyContent } from "../components/empty-content.tsx";
 import { MainLayout } from "../components/layouts/main-layout.tsx";
 import { Link } from "../components/link.tsx";
-import { rootRoute } from "../router/router.tsx";
+import { rootRoute } from "../router/router.ts";
 import { getAllPagesQueryOptions } from "../sanity/queries/get-all-pages.ts";
 import { getRouteQueries } from "../util/get-route-queries.ts";
 import { setMeta } from "../util/set-meta.ts";

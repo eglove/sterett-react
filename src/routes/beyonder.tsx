@@ -8,7 +8,7 @@ import { Container } from "../components/container.tsx";
 import { EmptyContent } from "../components/empty-content.tsx";
 import { Event } from "../components/event.tsx";
 import { MainLayout } from "../components/layouts/main-layout.tsx";
-import { rootRoute } from "../router/router.tsx";
+import { rootRoute } from "../router/router.ts";
 import { getBeyonderEventsQueryOptions } from "../sanity/queries/get-beyonder-events.ts";
 import { getRouteQueries } from "../util/get-route-queries.ts";
 import { setMeta } from "../util/set-meta.ts";

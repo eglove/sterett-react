@@ -4,7 +4,7 @@ import { Container } from "../components/container.tsx";
 import { EmptyContent } from "../components/empty-content.tsx";
 import { FileTable } from "../components/files/file-table.tsx";
 import { MainLayout } from "../components/layouts/main-layout.tsx";
-import { rootRoute } from "../router/router.tsx";
+import { rootRoute } from "../router/router.ts";
 import { getGeneralCovenantFilesQueryOptions } from "../sanity/queries/get-general-covenant-files.ts";
 import { getMeetingMinutesFilesQueryOptions } from "../sanity/queries/get-meeting-minutes-files.ts";
 import { getRouteQueries } from "../util/get-route-queries.ts";

@@ -5,6 +5,7 @@ import { useSuspenseQuery } from "@tanstack/react-query";
 import { createRoute } from "@tanstack/react-router";
 import isNil from "lodash/isNil.js";
 import { DateTime } from "luxon";
+// eslint-disable-next-line depend/ban-dependencies
 import moment from "moment";
 import { useCallback, useState } from "react";
 import { Calendar, momentLocalizer } from "react-big-calendar";
@@ -13,7 +14,7 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import { CalendarModal } from "../components/calendar/calendar-modal.tsx";
 import { EmptyContent } from "../components/empty-content.tsx";
 import { MainLayout } from "../components/layouts/main-layout.tsx";
-import { rootRoute } from "../router/router.tsx";
+import { rootRoute } from "../router/router.ts";
 import { getCalendarEventsQueryOptions } from "../sanity/queries/get-calendar-events.ts";
 import { AMERICA_CHICAGO } from "../util/date.ts";
 import { getRouteQueries } from "../util/get-route-queries.ts";

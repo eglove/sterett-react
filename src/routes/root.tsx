@@ -2,8 +2,8 @@ import { NextUIProvider } from "@nextui-org/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Outlet } from "@tanstack/react-router";
 
-import { QueryDevelopmentTools } from "../components/query-development-tools.tsx";
-import { RouterDevelopmentTools } from "../components/router-development-tools.tsx";
+import { QueryDevelopmentTools } from "../components/query-development-tools.ts";
+import { RouterDevelopmentTools } from "../components/router-development-tools.ts";
 
 export const queryClient = new QueryClient({
   defaultOptions: {

@@ -1,6 +1,6 @@
 import { createRoute } from "@tanstack/react-router";
 
-import { rootRoute } from "../router/router.tsx";
+import { rootRoute } from "../router/router.ts";
 
 export const adminRoute = createRoute({
   beforeLoad() {

@@ -14,7 +14,7 @@ import { EmptyContent } from "../components/empty-content.tsx";
 import { Event } from "../components/event.tsx";
 import { MainLayout } from "../components/layouts/main-layout.tsx";
 import { NewsUpdate } from "../components/news-update.tsx";
-import { rootRoute } from "../router/router.tsx";
+import { rootRoute } from "../router/router.ts";
 import { getNewsAndEventsQueryOptions } from "../sanity/queries/get-news-and-events.ts";
 import { getRouteQueries } from "../util/get-route-queries.ts";
 import { setMeta } from "../util/set-meta.ts";

@@ -4,7 +4,7 @@ import { createRoute } from "@tanstack/react-router";
 import { Container } from "../components/container.tsx";
 import { MainLayout } from "../components/layouts/main-layout.tsx";
 import { Trustee } from "../components/trustee.tsx";
-import { rootRoute } from "../router/router.tsx";
+import { rootRoute } from "../router/router.ts";
 import { getTrusteesQueryOptions } from "../sanity/queries/get-trustees.ts";
 import { getRouteQueries } from "../util/get-route-queries.ts";
 import { setMeta } from "../util/set-meta.ts";

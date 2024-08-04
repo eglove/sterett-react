@@ -19,7 +19,7 @@ type AddToCalendarProperties = {
   readonly buttonProps?: Parameters<typeof Button>[0];
   readonly classNames?: { button?: string };
   readonly description?: PortableTextBlock;
-} & Omit<CalendarEvent, "description">;
+} & Readonly<Omit<CalendarEvent, "description">>;
 
 // eslint-disable-next-line max-lines-per-function
 export function AddToCalendar({

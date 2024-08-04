@@ -6,7 +6,7 @@ import { Container } from "../components/container.tsx";
 import { EmptyContent } from "../components/empty-content.tsx";
 import { MainLayout } from "../components/layouts/main-layout.tsx";
 import { SanityContent } from "../components/sanity/sanity-content.tsx";
-import { rootRoute } from "../router/router.tsx";
+import { rootRoute } from "../router/router.ts";
 import { getPageQueryOptions } from "../sanity/queries/get-page.ts";
 import { setMeta } from "../util/set-meta.ts";
 import { queryClient } from "./root.tsx";

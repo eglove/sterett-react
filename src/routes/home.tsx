@@ -9,7 +9,7 @@ import { Container } from "../components/container.tsx";
 import { EmptyContent } from "../components/empty-content.tsx";
 import { MainLayout } from "../components/layouts/main-layout.tsx";
 import { SanityContent } from "../components/sanity/sanity-content.tsx";
-import { rootRoute } from "../router/router.tsx";
+import { rootRoute } from "../router/router.ts";
 import { getEventsQueryOptions } from "../sanity/queries/get-events.ts";
 import { getGalleryImagesCountQueryOptions } from "../sanity/queries/get-gallery-images-count.ts";
 import { getPageQueryOptions } from "../sanity/queries/get-page.ts";
