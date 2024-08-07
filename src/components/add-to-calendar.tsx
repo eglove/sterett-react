@@ -32,7 +32,9 @@ export function AddToCalendar({
     (type: "google" | "ics" | "office365" | "outlook" | "yahoo") => {
       const data = {
         ...rest,
-        description: isNil(description) ? "" : toPlainText(description),
+        description: isNil(description)
+          ? ""
+          : toPlainText(description),
       };
 
       // eslint-disable-next-line max-statements
@@ -67,22 +69,42 @@ export function AddToCalendar({
   return (
     <Dropdown>
       <DropdownTrigger>
-        <Button {...buttonProps}>Add To Calendar</Button>
+        <Button {...buttonProps}>
+          Add To Calendar
+        </Button>
       </DropdownTrigger>
-      <DropdownMenu aria-label="Calendar Options" selectionMode="single">
-        <DropdownItem key="ics" onPress={handlePress("ics")}>
+      <DropdownMenu
+        aria-label="Calendar Options"
+        selectionMode="single"
+      >
+        <DropdownItem
+          key="ics"
+          onPress={handlePress("ics")}
+        >
           Apple / ICS
         </DropdownItem>
-        <DropdownItem key="google" onPress={handlePress("google")}>
+        <DropdownItem
+          key="google"
+          onPress={handlePress("google")}
+        >
           Google
         </DropdownItem>
-        <DropdownItem key="outlook" onPress={handlePress("outlook")}>
+        <DropdownItem
+          key="outlook"
+          onPress={handlePress("outlook")}
+        >
           Outlook
         </DropdownItem>
-        <DropdownItem key="office365" onPress={handlePress("office365")}>
+        <DropdownItem
+          key="office365"
+          onPress={handlePress("office365")}
+        >
           Office 365
         </DropdownItem>
-        <DropdownItem key="yahoo" onPress={handlePress("yahoo")}>
+        <DropdownItem
+          key="yahoo"
+          onPress={handlePress("yahoo")}
+        >
           Yahoo
         </DropdownItem>
       </DropdownMenu>

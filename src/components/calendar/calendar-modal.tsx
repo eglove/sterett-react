@@ -24,12 +24,18 @@ export function CalendarModal({
   selectedEvent,
 }: CalendarModalProperties) {
   return (
-    <Modal backdrop="blur" isOpen={isOpen} onOpenChange={onOpenChange}>
+    <Modal
+      backdrop="blur"
+      isOpen={isOpen}
+      onOpenChange={onOpenChange}
+    >
       <ModalContent>
         {(onClose) => {
           return (
             <>
-              <ModalHeader>{selectedEvent.title}</ModalHeader>
+              <ModalHeader>
+                {selectedEvent.title}
+              </ModalHeader>
               <ModalBody>
                 <CalendarModalContent selectedEvent={selectedEvent} />
               </ModalBody>
@@ -39,7 +45,10 @@ export function CalendarModal({
                   start={selectedEvent.start}
                   title={selectedEvent.title}
                 />
-                <Button color="danger" onClick={onClose}>
+                <Button
+                  color="danger"
+                  onClick={onClose}
+                >
                   Close
                 </Button>
               </ModalFooter>

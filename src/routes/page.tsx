@@ -41,7 +41,10 @@ export function PageRoute() {
       <Container>
         {map(data, (page) => {
           return (
-            <div className="w-full" key={page._id}>
+            <div
+              className="w-full"
+              key={page._id}
+            >
               <Link
                 className="underline"
                 href={`/page/${page.slug.current}`}

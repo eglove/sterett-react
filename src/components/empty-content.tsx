@@ -5,7 +5,9 @@ export function EmptyContent() {
   return (
     <MainLayout>
       <Container>
-        <p>There&apos;s nothing here yet, check back later.</p>
+        <p>
+          There&apos;s nothing here yet, check back later.
+        </p>
       </Container>
     </MainLayout>
   );

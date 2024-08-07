@@ -7,7 +7,10 @@ import { noSlash } from "../../util/string.ts";
 import { Link } from "../link.tsx";
 
 const navUrls = [
-  { name: "Home", url: "/" },
+  {
+    name: "Home",
+    url: "/",
+  },
   {
     name: "News",
     url: "/news/",
@@ -40,19 +43,22 @@ export function NavigationLinks() {
             isActive={noSlash(location.pathname) === noSlash(item.url)}
             key={item.name}
           >
-            <Link href={item.url}>{item.name}</Link>
+            <Link href={item.url}>
+              {item.name}
+            </Link>
           </NavbarItem>
         );
       })}
-      {1 <= imageCount && (
+      {1 <= imageCount &&
         <NavbarItem
           className="text-sky-700"
           isActive={"/gallery" === location.pathname}
           key="gallery"
         >
-          <Link href="/gallery">Pictures</Link>
-        </NavbarItem>
-      )}
+          <Link href="/gallery">
+            Pictures
+          </Link>
+        </NavbarItem>}
     </>
   );
 }

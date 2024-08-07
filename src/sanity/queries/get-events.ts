@@ -21,7 +21,12 @@ type CalendarEventSchema = {
 export async function getEvents() {
   const today = DateTime.fromJSDate(new Date(), {
     zone: AMERICA_CHICAGO,
-  }).set({ hour: 0, millisecond: 0, minute: 0, second: 0 });
+  }).set({
+    hour: 0,
+    millisecond: 0,
+    minute: 0,
+    second: 0,
+  });
   const formattedDate = today.toFormat("yyyy-LL-dd");
   const oneMonth = today.plus({ month: 1 }).toFormat("yyyy-LL-dd");
 

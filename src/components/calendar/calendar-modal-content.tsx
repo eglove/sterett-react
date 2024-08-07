@@ -17,7 +17,8 @@ export function CalendarModalContent({
     <>
       <div>
         <p className="leading-relaxed">
-          Starts:{" "}
+          Starts:
+          {" "}
           {DateTime.fromJSDate(selectedEvent.start, {
             zone: AMERICA_CHICAGO,
           }).toLocaleString({
@@ -26,7 +27,8 @@ export function CalendarModalContent({
           })}
         </p>
         <p className="leading-relaxed">
-          Ends:{" "}
+          Ends:
+          {" "}
           {DateTime.fromJSDate(selectedEvent.end, {
             zone: AMERICA_CHICAGO,
           }).toLocaleString({
@@ -35,9 +37,8 @@ export function CalendarModalContent({
           })}
         </p>
       </div>
-      {!isNil(selectedEvent.description) && (
-        <SanityContent value={selectedEvent.description} />
-      )}
+      {!isNil(selectedEvent.description) &&
+        <SanityContent value={selectedEvent.description} />}
     </>
   );
 }

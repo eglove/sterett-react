@@ -6,9 +6,18 @@ import { motion } from "framer-motion";
 const transition = { duration: 0.5 };
 
 const pageTransition = {
-  exit: { opacity: 0, transition },
-  hidden: { opacity: 0, transition },
-  visible: { opacity: 1, transition },
+  exit: {
+    opacity: 0,
+    transition,
+  },
+  hidden: {
+    opacity: 0,
+    transition,
+  },
+  visible: {
+    opacity: 1,
+    transition,
+  },
 } satisfies AnimationProps["variants"];
 
 export function MotionRoute({ children }: Readonly<PropsWithChildren>) {

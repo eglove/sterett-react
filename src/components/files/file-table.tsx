@@ -32,7 +32,11 @@ export function FileTable({ query }: FileTableProperties) {
 
   return (
     <div className="w-full">
-      <FileTableTop filter={filter} query={query} setFilter={setFilter} />
+      <FileTableTop
+        filter={filter}
+        query={query}
+        setFilter={setFilter}
+      />
       <Table
         hideHeader
         isHeaderSticky

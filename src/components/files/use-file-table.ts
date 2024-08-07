@@ -26,7 +26,9 @@ export function useFileTable(query: keyof typeof filesRouteQueries) {
       sortedItems = orderBy(
         sortedItems,
         [sortConfig.column],
-        ["ascending" === sortConfig.direction ? "asc" : "desc"],
+        ["ascending" === sortConfig.direction
+          ? "asc"
+          : "desc"],
       ) as typeof data;
     }
 
@@ -49,5 +51,11 @@ export function useFileTable(query: keyof typeof filesRouteQueries) {
     return sortedItems;
   }, [data, sortConfig, filter]);
 
-  return { filter, setFilter, setSortConfig, sortConfig, sortedData };
+  return {
+    filter,
+    setFilter,
+    setSortConfig,
+    sortConfig,
+    sortedData,
+  };
 }

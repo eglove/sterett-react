@@ -57,7 +57,10 @@ export function NewsRoute() {
           {map(data, (datum) => {
             if (!isNil((datum as NewsUpdateReturn).date)) {
               return (
-                <NewsUpdate data={datum as NewsUpdateReturn} key={datum._id} />
+                <NewsUpdate
+                  data={datum as NewsUpdateReturn}
+                  key={datum._id}
+                />
               );
             }
 

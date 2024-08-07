@@ -41,7 +41,11 @@ export function TrusteesRoute() {
         <div className="grid gap-4 md:grid-cols-3">
           {map(data, (trustee, index) => {
             return (
-              <Trustee index={index} key={trustee._id} trustee={trustee} />
+              <Trustee
+                index={index}
+                key={trustee._id}
+                trustee={trustee}
+              />
             );
           })}
         </div>

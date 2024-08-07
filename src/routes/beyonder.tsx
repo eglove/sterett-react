@@ -53,8 +53,11 @@ export function BeyonderRoute() {
                   eventBackground: "beyonderGreen",
                   eventText: "text-white",
                 }}
+                iconMeta={{
+                  alt: "Beyonder Camp",
+                  src: "/images/beyonder.png",
+                }}
                 data={datum}
-                iconMeta={{ alt: "Beyonder Camp", src: "/images/beyonder.png" }}
                 key={datum._id}
               />
             );

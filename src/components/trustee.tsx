@@ -32,7 +32,10 @@ export function Trustee({ index, trustee }: TrusteeProperties) {
     .url();
 
   return (
-    <div className="mb-4 w-full gap-4 border-b-2 pb-4" key={trustee._id}>
+    <div
+      className="mb-4 w-full gap-4 border-b-2 pb-4"
+      key={trustee._id}
+    >
       <User
         avatarProps={{
           className: "w-32 h-32",
@@ -51,7 +54,9 @@ export function Trustee({ index, trustee }: TrusteeProperties) {
                 {trustee.phoneNumber}
               </Link>
             </p>
-            <p className="text-small text-foreground-800">{trustee.duties}</p>
+            <p className="text-small text-foreground-800">
+              {trustee.duties}
+            </p>
           </>
         }
         className="gap-4"

@@ -6,9 +6,15 @@ export type ImageAsset = {
     right: number;
     top: number;
   };
-  hotspot: { x: number; y: number };
+  hotspot: {
+    x: number;
+    y: number;
+  };
   metadata: {
-    dimensions: { height: number; width: number };
+    dimensions: {
+      height: number;
+      width: number;
+    };
     lqip: string;
   };
   url: string;

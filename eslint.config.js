@@ -12,7 +12,6 @@ export default tseslint.config(...config, ...configReact, {
     },
   },
   rules: {
-    "react/forbid-component-props": "off",
     "n/no-extraneous-import": "off",
     "barrel/avoid-importing-barrel-files": "off",
   },

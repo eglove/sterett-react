@@ -36,7 +36,12 @@ export type NewsAndEvents = (CalendarEventReturn | NewsUpdateReturn)[];
 export async function getNewsAndEvents() {
   const today = DateTime.fromJSDate(new Date(), {
     zone: AMERICA_CHICAGO,
-  }).set({ hour: 0, millisecond: 0, minute: 0, second: 0 });
+  }).set({
+    hour: 0,
+    millisecond: 0,
+    minute: 0,
+    second: 0,
+  });
   const formattedDate = today.toFormat("yyyy-LL-dd");
 
   const eventQuery = ` 
@@ -52,7 +57,10 @@ export async function getNewsAndEvents() {
     sterettSanityClient.fetch<NewsUpdateReturn[]>(updateQuery),
   ]);
 
-  return sortNewsAndEvents({ events, updates });
+  return sortNewsAndEvents({
+    events,
+    updates,
+  });
 }
 
 function sortNewsAndEvents(eventsNews: EventsNewsReturn) {
@@ -67,8 +75,12 @@ function sortNewsAndEvents(eventsNews: EventsNewsReturn) {
   }
 
   return merged.flat().sort((a, b) => {
-    const aDate = "startsAt" in a ? new Date(a.startsAt) : new Date(a.date);
-    const bDate = "startsAt" in b ? new Date(b.startsAt) : new Date(b.date);
+    const aDate = "startsAt" in a
+      ? new Date(a.startsAt)
+      : new Date(a.date);
+    const bDate = "startsAt" in b
+      ? new Date(b.startsAt)
+      : new Date(b.date);
 
     return aDate.getTime() - bDate.getTime();
   });

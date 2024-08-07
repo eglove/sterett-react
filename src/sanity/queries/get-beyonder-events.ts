@@ -21,7 +21,12 @@ export type BeyonderEventsReturn = {
 export const getBeyonderEvents = async () => {
   const today = DateTime.fromJSDate(new Date(), {
     zone: AMERICA_CHICAGO,
-  }).set({ hour: 0, millisecond: 0, minute: 0, second: 0 });
+  }).set({
+    hour: 0,
+    millisecond: 0,
+    minute: 0,
+    second: 0,
+  });
   const formattedDate = today.toFormat("yyyy-LL-dd");
 
   const eventQuery = `

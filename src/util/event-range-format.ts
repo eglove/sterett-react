@@ -20,5 +20,8 @@ export function eventRangeFormat(start: string, end: string) {
   return `${startDate.toLocaleString({
     dateStyle: "medium",
     timeStyle: "short",
-  })} - ${endDate.toLocaleString({ dateStyle: "medium", timeStyle: "short" })}`;
+  })} - ${endDate.toLocaleString({
+    dateStyle: "medium",
+    timeStyle: "short",
+  })}`;
 }

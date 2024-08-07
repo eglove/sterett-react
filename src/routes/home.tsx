@@ -42,6 +42,7 @@ export const indexRoute = createRoute({
   path: "/",
 });
 
+// eslint-disable-next-line max-lines-per-function
 export function HomeRoute() {
   const { data } = useSuspenseQuery(indexRouteQueries.pageData);
   const { data: events } = useSuspenseQuery(indexRouteQueries.events);
@@ -53,22 +54,33 @@ export function HomeRoute() {
   return (
     <MainLayout>
       <Container>
-        <h2 className="text-2xl font-bold">Upcoming Events</h2>
+        <h2 className="text-2xl font-bold">
+          Upcoming Events
+        </h2>
         {map(events, (event) => {
           return (
-            <div className="block" key={event._id}>
+            <div
+              className="block"
+              key={event._id}
+            >
               <p>
-                <strong>{event.title}</strong>
+                <strong>
+                  {event.title}
+                </strong>
                 <br />
-                <span>{eventRangeFormat(event.startsAt, event.endsAt)}</span>
+                <span>
+                  {eventRangeFormat(event.startsAt, event.endsAt)}
+                </span>
               </p>
-              {!isNil(event.description) && (
+              {!isNil(event.description) &&
                 <div className="prose">
                   <SanityContent value={event.description} />
-                </div>
-              )}
+                </div>}
               <AddToCalendar
-                buttonProps={{ className: "bg-sky-600 text-white", size: "sm" }}
+                buttonProps={{
+                  className: "bg-sky-600 text-white",
+                  size: "sm",
+                }}
                 description={event.description as unknown as PortableTextBlock}
                 end={event.endsAt}
                 start={event.startsAt}
