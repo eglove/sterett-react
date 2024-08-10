@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@ethang/eslint-config": "^18.4.10",
-    "@ethang/project-builder": "^2.3.6",
+    "@ethang/project-builder": "^2.3.9",
     "@portabletext/types": "^2.0.13",
     "@tailwindcss/typography": "^0.5.14",
     "@tsconfig/strictest": "^2.0.5",

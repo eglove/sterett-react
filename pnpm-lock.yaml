@@ -85,8 +85,8 @@ importers:
         specifier: ^18.4.10
         version: 18.4.10(lsziwymubjdjuh244nbkswujy4)
       '@ethang/project-builder':
-        specifier: ^2.3.6
-        version: 2.3.6(chalk@5.3.0)(fs-extra@11.2.0)(inquirer@10.1.8)(lodash@4.17.21)(simple-git@3.25.0)(tsup@8.2.4(jiti@1.21.6)(postcss@8.4.41)(typescript@5.5.4)(yaml@2.5.0))(typescript@5.5.4)
+        specifier: ^2.3.9
+        version: 2.3.9(chalk@5.3.0)(fs-extra@11.2.0)(inquirer@10.1.8)(lodash@4.17.21)(simple-git@3.25.0)(tsup@8.2.4(jiti@1.21.6)(postcss@8.4.41)(typescript@5.5.4)(yaml@2.5.0))(typescript@5.5.4)
       '@portabletext/types':
         specifier: ^2.0.13
         version: 2.0.13
@@ -1143,8 +1143,8 @@ packages:
       react: ^18.3.1
       zod: ^3.23.8
 
-  '@ethang/project-builder@2.3.6':
-    resolution: {integrity: sha512-N8NPKUAVeQtbFDnede8fPZ8ruIY6ohv/xtoLGqM+LbzOJ8kE9H2YZhyxg22zBn+i13fS15sTxYR2QhMl9i2eqg==}
+  '@ethang/project-builder@2.3.9':
+    resolution: {integrity: sha512-BXsvoaFmF6CPdpw/xzFBLyeohGI4n0yUG7/FdXkV9kjy6WcAeYSHtTkCRS7g9bvcIqcYWBhSMwAlnz7WKFcJew==}
     peerDependencies:
       chalk: ^5.3.0
       fs-extra: ^11.2.0
@@ -6443,7 +6443,7 @@ snapshots:
       react: 18.3.1
       zod: 3.23.8
 
-  '@ethang/project-builder@2.3.6(chalk@5.3.0)(fs-extra@11.2.0)(inquirer@10.1.8)(lodash@4.17.21)(simple-git@3.25.0)(tsup@8.2.4(jiti@1.21.6)(postcss@8.4.41)(typescript@5.5.4)(yaml@2.5.0))(typescript@5.5.4)':
+  '@ethang/project-builder@2.3.9(chalk@5.3.0)(fs-extra@11.2.0)(inquirer@10.1.8)(lodash@4.17.21)(simple-git@3.25.0)(tsup@8.2.4(jiti@1.21.6)(postcss@8.4.41)(typescript@5.5.4)(yaml@2.5.0))(typescript@5.5.4)':
     dependencies:
       chalk: 5.3.0
       fs-extra: 11.2.0
