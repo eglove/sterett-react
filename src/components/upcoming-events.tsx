@@ -49,7 +49,10 @@ export function UpcomingEvents() {
               title={event.title}
             />
             {!isNil(event.description) &&
-              <SanityContent value={event.description} />}
+              <SanityContent
+                styleNames="mb-2"
+                value={event.description}
+              />}
           </AccordionItem>
         );
       })}
