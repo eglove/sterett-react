@@ -20,6 +20,10 @@ export function UpcomingEvents() {
       {map(events, (event) => {
         return (
           <AccordionItem
+            classNames={{
+              content: "p-0",
+              trigger: "px-2 py-0",
+            }}
             title={
               <p>
                 <strong>
@@ -33,11 +37,10 @@ export function UpcomingEvents() {
             }
             aria-label={event.title}
             className="prose w-full"
-            classNames={{ trigger: "px-2 py-0" }}
           >
             <AddToCalendar
               buttonProps={{
-                className: "bg-sky-600 text-white",
+                className: "bg-sky-600 text-white mb-4",
                 size: "sm",
               }}
               description={event.description as unknown as PortableTextBlock}

@@ -2,6 +2,7 @@ import type { PortableTextBlock } from "@portabletext/types";
 import type { CalendarEvent } from "calendar-link";
 
 import { Button } from "@nextui-org/button";
+import { Image } from "@nextui-org/image";
 import {
   Dropdown,
   DropdownItem,
@@ -81,31 +82,61 @@ export function AddToCalendar({
           key="ics"
           onPress={handlePress("ics")}
         >
-          Apple / ICS
+          <div className="flex items-center gap-2">
+            <Image
+              className="w-4"
+              src="/images/apple-logo.png"
+            />
+            Apple / ICS
+          </div>
         </DropdownItem>
         <DropdownItem
           key="google"
           onPress={handlePress("google")}
         >
-          Google
+          <div className="flex items-center gap-2">
+            <Image
+              className="w-4"
+              src="/images/google-logo.png"
+            />
+            Google
+          </div>
         </DropdownItem>
         <DropdownItem
           key="outlook"
           onPress={handlePress("outlook")}
         >
-          Outlook
+          <div className="flex items-center gap-2">
+            <Image
+              className="w-4"
+              src="/images/outlook-logo.png"
+            />
+            Outlook
+          </div>
         </DropdownItem>
         <DropdownItem
           key="office365"
           onPress={handlePress("office365")}
         >
-          Office 365
+          <div className="flex items-center gap-2">
+            <Image
+              className="w-4"
+              src="/images/office-365-logo.svg"
+            />
+            Office 365
+          </div>
         </DropdownItem>
         <DropdownItem
           key="yahoo"
           onPress={handlePress("yahoo")}
         >
-          Yahoo
+          <div className="flex items-center gap-2">
+            <Image
+              className="w-4"
+              src="/images/yahoo-logo.webp"
+            />
+            Yahoo
+          </div>
         </DropdownItem>
       </DropdownMenu>
     </Dropdown>
