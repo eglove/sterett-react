@@ -38,7 +38,6 @@ export const indexRoute = createRoute({
   path: "/",
 });
 
-
 export function HomeRoute() {
   const { data } = useSuspenseQuery(indexRouteQueries.pageData);
 

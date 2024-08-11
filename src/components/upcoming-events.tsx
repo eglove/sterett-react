@@ -37,6 +37,7 @@ export function UpcomingEvents() {
             }
             aria-label={event.title}
             className="prose w-full"
+            key={event._id}
           >
             <AddToCalendar
               buttonProps={{
