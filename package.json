@@ -36,11 +36,11 @@
     "react-big-calendar": "^1.13.2",
     "react-dom": "^18.3.1",
     "sanity-image": "^0.1.9",
-    "tailwind-merge": "^2.4.0",
+    "tailwind-merge": "^2.5.0",
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@ethang/eslint-config": "^18.4.11",
+    "@ethang/eslint-config": "^18.4.12",
     "@ethang/project-builder": "^2.3.9",
     "@portabletext/types": "^2.0.13",
     "@tailwindcss/typography": "^0.5.14",
