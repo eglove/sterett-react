@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@ethang/hooks": "^2.1.0",
-    "@ethang/toolbelt": "^3.6.0",
+    "@ethang/toolbelt": "^3.8.0",
     "@heroicons/react": "^2.1.5",
     "@nextui-org/react": "^2.4.6",
     "@portabletext/react": "^3.1.0",
@@ -40,7 +40,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@ethang/eslint-config": "^18.4.18",
+    "@ethang/eslint-config": "^18.4.19",
     "@ethang/project-builder": "^2.3.9",
     "@portabletext/types": "^2.0.13",
     "@tailwindcss/typography": "^0.5.14",
