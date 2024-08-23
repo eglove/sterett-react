@@ -10,11 +10,11 @@ type FileTableBodyProperties = {
   readonly setFilter: Dispatch<SetStateAction<string>>;
 };
 
-export function FileTableTop({
+export const FileTableTop = ({
   filter,
   query,
   setFilter,
-}: FileTableBodyProperties) {
+}: FileTableBodyProperties) => {
   return (
     <>
       <h1 className="mb-4 text-center text-2xl font-bold">
@@ -32,4 +32,4 @@ export function FileTableTop({
       />
     </>
   );
-}
+};

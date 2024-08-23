@@ -29,7 +29,7 @@ const navUrls = [
   },
 ];
 
-export function NavigationLinks() {
+export const NavigationLinks = () => {
   const { data: imageCount } = useSuspenseQuery(
     getGalleryImagesCountQueryOptions(),
   );
@@ -61,4 +61,4 @@ export function NavigationLinks() {
         </NavbarItem>}
     </>
   );
-}
+};

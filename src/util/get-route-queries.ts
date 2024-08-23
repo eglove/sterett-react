@@ -4,7 +4,7 @@ import map from "lodash/map";
 
 import { queryClient } from "../routes/root.tsx";
 
-export async function getRouteQueries(options: Record<string, unknown>) {
+export const getRouteQueries = async (options: Record<string, unknown>) => {
   return Promise.all(
     map(options, async (option) => {
       return queryClient.ensureQueryData(
@@ -12,4 +12,4 @@ export async function getRouteQueries(options: Record<string, unknown>) {
       );
     }),
   );
-}
+};

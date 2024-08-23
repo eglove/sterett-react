@@ -16,15 +16,15 @@ export type GetCalendarEventsReturn = {
   title: string;
 }[];
 
-export async function getCalendarEvents() {
+export const getCalendarEvents = async () => {
   const eventQuery = `*[_type == "calendarEvent" && ${NO_DRAFTS}]{_id, title, startsAt, endsAt, description}`;
 
   return sterettSanityClient.fetch<GetCalendarEventsReturn>(eventQuery);
-}
+};
 
-export function getCalendarEventsQueryOptions() {
+export const getCalendarEventsQueryOptions = () => {
   return queryOptions({
     queryFn: getCalendarEvents,
     queryKey: [queryKeys.sterett, queryKeys.getCalendarEvents],
   });
-}
+};

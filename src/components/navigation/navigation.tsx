@@ -4,7 +4,7 @@ import { useCallback, useState } from "react";
 import { NavigationHero } from "./navigation-hero.tsx";
 import { NavigationLinks } from "./navigation-links.tsx";
 
-export function Navigation() {
+export const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleIsOpen = useCallback((isOpen: boolean): void => {
@@ -26,4 +26,4 @@ export function Navigation() {
       </NavbarMenu>
     </Navbar>
   );
-}
+};

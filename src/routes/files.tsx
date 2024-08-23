@@ -15,6 +15,18 @@ export const filesRouteQueries = {
   meetingMinutesFiles: getMeetingMinutesFilesQueryOptions(),
 };
 
+
+export const FilesRoute = () => {
+  return (
+    <MainLayout>
+      <Container styleNames="grid lg:grid-cols-2 place-items-start">
+        <FileTable query="generalCovenantFiles" />
+        <FileTable query="meetingMinutesFiles" />
+      </Container>
+    </MainLayout>
+  );
+};
+
 export const filesRoute = createRoute({
   beforeLoad() {
     setMeta({
@@ -32,14 +44,3 @@ export const filesRoute = createRoute({
   },
   path: "/files",
 });
-
-export function FilesRoute() {
-  return (
-    <MainLayout>
-      <Container styleNames="grid lg:grid-cols-2 place-items-start">
-        <FileTable query="generalCovenantFiles" />
-        <FileTable query="meetingMinutesFiles" />
-      </Container>
-    </MainLayout>
-  );
-}

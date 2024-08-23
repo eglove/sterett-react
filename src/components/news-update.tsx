@@ -10,7 +10,7 @@ type NewsUpdateProperties = {
   readonly data: NewsUpdateReturn;
 };
 
-export function NewsUpdate({ data }: NewsUpdateProperties) {
+export const NewsUpdate = ({ data }: NewsUpdateProperties) => {
   return (
     <Card
       className="h-max w-full"
@@ -30,4 +30,4 @@ export function NewsUpdate({ data }: NewsUpdateProperties) {
         </>}
     </Card>
   );
-}
+};

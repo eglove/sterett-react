@@ -14,25 +14,7 @@ export const trusteesRouteQueries = {
   trustees: getTrusteesQueryOptions(),
 };
 
-export const trusteesRoute = createRoute({
-  beforeLoad() {
-    setMeta({
-      description:
-        "Trustee contact information for Sterett Creek Village Trustee Board",
-      title: "Sterett Creek Village Trustee | Trustees",
-    });
-  },
-  component: TrusteesRoute,
-  getParentRoute() {
-    return rootRoute;
-  },
-  async loader() {
-    return getRouteQueries(trusteesRouteQueries);
-  },
-  path: "/trustees",
-});
-
-export function TrusteesRoute() {
+export const TrusteesRoute = () => {
   const { data } = useSuspenseQuery(trusteesRouteQueries.trustees);
 
   return (
@@ -52,4 +34,22 @@ export function TrusteesRoute() {
       </Container>
     </MainLayout>
   );
-}
+};
+
+export const trusteesRoute = createRoute({
+  beforeLoad() {
+    setMeta({
+      description:
+          "Trustee contact information for Sterett Creek Village Trustee Board",
+      title: "Sterett Creek Village Trustee | Trustees",
+    });
+  },
+  component: TrusteesRoute,
+  getParentRoute() {
+    return rootRoute;
+  },
+  async loader() {
+    return getRouteQueries(trusteesRouteQueries);
+  },
+  path: "/trustees",
+});

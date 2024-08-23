@@ -33,7 +33,7 @@ export type EventsNewsReturn = {
 
 export type NewsAndEvents = (CalendarEventReturn | NewsUpdateReturn)[];
 
-export async function getNewsAndEvents() {
+export const getNewsAndEvents = async () => {
   const today = DateTime.fromJSDate(new Date(), {
     zone: AMERICA_CHICAGO,
   }).set({
@@ -61,9 +61,9 @@ export async function getNewsAndEvents() {
     events,
     updates,
   });
-}
+};
 
-function sortNewsAndEvents(eventsNews: EventsNewsReturn) {
+const sortNewsAndEvents = (eventsNews: EventsNewsReturn) => {
   const merged: NewsAndEvents = [];
 
   if (!isEmpty(eventsNews.events)) {
@@ -84,11 +84,11 @@ function sortNewsAndEvents(eventsNews: EventsNewsReturn) {
 
     return aDate.getTime() - bDate.getTime();
   });
-}
+};
 
-export function getNewsAndEventsQueryOptions() {
+export const getNewsAndEventsQueryOptions = () => {
   return queryOptions({
     queryFn: getNewsAndEvents,
     queryKey: [queryKeys.sterett, queryKeys.getNewsAndEvents],
   });
-}
+};

@@ -20,25 +20,7 @@ export const indexRouteQueries = {
   pageData: getPageQueryOptions("home"),
 };
 
-export const indexRoute = createRoute({
-  beforeLoad() {
-    setMeta({
-      description: "Homepage of the Sterett Creek Village Trustee Board",
-      title: "Sterett Creek Village Trustee | Home",
-    });
-  },
-  component: HomeRoute,
-  errorComponent: EmptyContent,
-  getParentRoute: () => {
-    return rootRoute;
-  },
-  async loader() {
-    return getRouteQueries(indexRouteQueries);
-  },
-  path: "/",
-});
-
-export function HomeRoute() {
+export const HomeRoute = () => {
   const { data } = useSuspenseQuery(indexRouteQueries.pageData);
 
   if (isNil(data?.content)) {
@@ -56,4 +38,22 @@ export function HomeRoute() {
       </Container>
     </MainLayout>
   );
-}
+};
+
+export const indexRoute = createRoute({
+  beforeLoad() {
+    setMeta({
+      description: "Homepage of the Sterett Creek Village Trustee Board",
+      title: "Sterett Creek Village Trustee | Home",
+    });
+  },
+  component: HomeRoute,
+  errorComponent: EmptyContent,
+  getParentRoute: () => {
+    return rootRoute;
+  },
+  async loader() {
+    return getRouteQueries(indexRouteQueries);
+  },
+  path: "/",
+});

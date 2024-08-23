@@ -26,9 +26,9 @@ export const getGalleryImages = async () => {
   return shuffle(images);
 };
 
-export function getGalleryImagesQueryOptions() {
+export const getGalleryImagesQueryOptions = () => {
   return queryOptions({
     queryFn: getGalleryImages,
     queryKey: [queryKeys.sterett, queryKeys.getGalleryImages],
   });
-}
+};

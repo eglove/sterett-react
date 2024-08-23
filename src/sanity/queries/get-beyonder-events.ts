@@ -37,9 +37,9 @@ export const getBeyonderEvents = async () => {
   return sterettSanityClient.fetch<BeyonderEventsReturn>(eventQuery);
 };
 
-export function getBeyonderEventsQueryOptions() {
+export const getBeyonderEventsQueryOptions = () => {
   return queryOptions({
     queryFn: getBeyonderEvents,
     queryKey: [queryKeys.sterett, queryKeys.getBeyonderEvents],
   });
-}
+};

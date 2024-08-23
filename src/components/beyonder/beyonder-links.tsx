@@ -2,7 +2,7 @@ import { EnvelopeIcon, LinkIcon, PhoneIcon } from "@heroicons/react/24/outline";
 
 import { Link } from "../link";
 
-export function BeyonderLinks() {
+export const BeyonderLinks = () => {
   return (
     <div className="mx-4 flex flex-col flex-wrap gap-4 sm:flex-row">
       <div className="flex items-center gap-2">
@@ -44,4 +44,4 @@ export function BeyonderLinks() {
       </div>
     </div>
   );
-}
+};

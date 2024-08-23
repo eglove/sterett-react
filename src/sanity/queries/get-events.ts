@@ -18,7 +18,7 @@ type CalendarEventSchema = {
   title: string;
 }[];
 
-export async function getEvents() {
+export const getEvents = async () => {
   const today = DateTime.fromJSDate(new Date(), {
     zone: AMERICA_CHICAGO,
   }).set({
@@ -36,11 +36,11 @@ export async function getEvents() {
     && ${NO_DRAFTS}] | order(startsAt asc){_id, title, startsAt, endsAt, description}`;
 
   return sterettSanityClient.fetch<CalendarEventSchema>(eventQuery);
-}
+};
 
-export function getEventsQueryOptions() {
+export const getEventsQueryOptions = () => {
   return queryOptions({
     queryFn: getEvents,
     queryKey: [queryKeys.sterett, queryKeys.getEvents],
   });
-}
+};

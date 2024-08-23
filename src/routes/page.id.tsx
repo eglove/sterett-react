@@ -11,6 +11,23 @@ import { getPageQueryOptions } from "../sanity/queries/get-page.ts";
 import { setMeta } from "../util/set-meta.ts";
 import { queryClient } from "./root.tsx";
 
+export const PageIdRoute = () => {
+  const { id } = pageIdRoute.useParams();
+  const { data } = useSuspenseQuery(getPageQueryOptions(id));
+
+  if (isNil(data)) {
+    return <EmptyContent />;
+  }
+
+  return (
+    <MainLayout>
+      <Container>
+        <SanityContent value={data.content} />
+      </Container>
+    </MainLayout>
+  );
+};
+
 export const pageIdRoute = createRoute({
   beforeLoad(context) {
     setMeta({
@@ -28,20 +45,3 @@ export const pageIdRoute = createRoute({
   },
   path: "/page/$id",
 });
-
-export function PageIdRoute() {
-  const { id } = pageIdRoute.useParams();
-  const { data } = useSuspenseQuery(getPageQueryOptions(id));
-
-  if (isNil(data)) {
-    return <EmptyContent />;
-  }
-
-  return (
-    <MainLayout>
-      <Container>
-        <SanityContent value={data.content} />
-      </Container>
-    </MainLayout>
-  );
-}

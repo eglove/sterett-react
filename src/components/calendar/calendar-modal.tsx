@@ -18,11 +18,11 @@ type CalendarModalProperties = {
   readonly selectedEvent: CalendarComponentEvent;
 };
 
-export function CalendarModal({
+export const CalendarModal = ({
   isOpen,
   onOpenChange,
   selectedEvent,
-}: CalendarModalProperties) {
+}: CalendarModalProperties) => {
   return (
     <Modal
       backdrop="blur"
@@ -58,4 +58,4 @@ export function CalendarModal({
       </ModalContent>
     </Modal>
   );
-}
+};

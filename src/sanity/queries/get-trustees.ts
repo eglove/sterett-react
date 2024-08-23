@@ -24,15 +24,15 @@ export type GetTrusteesReturn = {
   phoneNumber: string;
 }[];
 
-export async function getTrustees() {
+export const getTrustees = async () => {
   const trusteesQuery = `*[_type == "trustee" && ${NO_DRAFTS}] | order(orderRank asc) {_id, order, orderRank, duties, name, phoneNumber, image{asset->{url, metadata{dimensions{height, width}}}}}`;
 
   return sterettSanityClient.fetch<GetTrusteesReturn>(trusteesQuery);
-}
+};
 
-export function getTrusteesQueryOptions() {
+export const getTrusteesQueryOptions = () => {
   return queryOptions({
     queryFn: getTrustees,
     queryKey: [queryKeys.sterett, queryKeys.getTrustees],
   });
-}
+};

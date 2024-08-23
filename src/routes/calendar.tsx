@@ -25,23 +25,6 @@ export const calendarRouteQueries = {
   calendarEvents: getCalendarEventsQueryOptions(),
 };
 
-export const calendarRoute = createRoute({
-  beforeLoad() {
-    setMeta({
-      description: "Events calendar for Sterett Creek Village Trustee",
-      title: "Sterett Creek Village Trustee | Calendar",
-    });
-  },
-  component: CalendarRoute,
-  errorComponent: EmptyContent,
-  getParentRoute: () => {
-    return rootRoute;
-  },
-  async loader() {
-    return getRouteQueries(calendarRouteQueries);
-  },
-  path: "/calendar",
-});
 
 export type CalendarComponentEvent = {
   description?: TypedObject | TypedObject[];
@@ -52,7 +35,7 @@ export type CalendarComponentEvent = {
 
 const localizer = momentLocalizer(moment);
 
-export function CalendarRoute() {
+export const CalendarRoute = () => {
   const { data } = useSuspenseQuery(calendarRouteQueries.calendarEvents);
   const [selectedEvent, setSelectedEvent] = useState<CalendarComponentEvent>();
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
@@ -100,4 +83,22 @@ export function CalendarRoute() {
       </div>
     </MainLayout>
   );
-}
+};
+
+export const calendarRoute = createRoute({
+  beforeLoad() {
+    setMeta({
+      description: "Events calendar for Sterett Creek Village Trustee",
+      title: "Sterett Creek Village Trustee | Calendar",
+    });
+  },
+  component: CalendarRoute,
+  errorComponent: EmptyContent,
+  getParentRoute: () => {
+    return rootRoute;
+  },
+  async loader() {
+    return getRouteQueries(calendarRouteQueries);
+  },
+  path: "/calendar",
+});

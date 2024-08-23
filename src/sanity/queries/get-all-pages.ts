@@ -31,9 +31,9 @@ export const getAllPages = async () => {
   return sterettSanityClient.fetch<GetAllPagesReturn>(slugQuery);
 };
 
-export function getAllPagesQueryOptions() {
+export const getAllPagesQueryOptions = () => {
   return queryOptions({
     queryFn: getAllPages,
     queryKey: [queryKeys.sterett, queryKeys.getAllPages],
   });
-}
+};

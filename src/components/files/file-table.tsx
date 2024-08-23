@@ -25,8 +25,7 @@ type FileTableProperties = {
   readonly query: keyof typeof filesRouteQueries;
 };
 
-// eslint-disable-next-line max-lines-per-function
-export function FileTable({ query }: FileTableProperties) {
+export const FileTable = ({ query }: FileTableProperties) => {
   const { filter, setFilter, setSortConfig, sortConfig, sortedData } =
     useFileTable(query);
 
@@ -99,4 +98,4 @@ export function FileTable({ query }: FileTableProperties) {
       </Table>
     </div>
   );
-}
+};

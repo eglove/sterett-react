@@ -35,7 +35,9 @@ const portableTextComponents = {
   },
 } satisfies Partial<PortableTextReactComponents>;
 
-export function SanityContent({ styleNames, value }: SanityContentProperties) {
+export const SanityContent = ({
+  styleNames, value,
+}: SanityContentProperties) => {
   return (
     <div className={twMerge("prose", styleNames)}>
       <PortableText
@@ -44,4 +46,4 @@ export function SanityContent({ styleNames, value }: SanityContentProperties) {
       />
     </div>
   );
-}
+};

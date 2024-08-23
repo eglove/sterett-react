@@ -14,7 +14,7 @@ export const queryClient = new QueryClient({
   },
 });
 
-function App() {
+const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <NextUIProvider>
@@ -24,6 +24,6 @@ function App() {
       </NextUIProvider>
     </QueryClientProvider>
   );
-}
+};
 
 export default App;

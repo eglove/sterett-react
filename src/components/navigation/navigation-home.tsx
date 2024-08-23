@@ -2,7 +2,7 @@ import { NavbarBrand } from "@nextui-org/navbar";
 
 import { Link } from "../link";
 
-export function NavigationHome() {
+export const NavigationHome = () => {
   return (
     <NavbarBrand>
       <Link href="/">
@@ -12,4 +12,4 @@ export function NavigationHome() {
       </Link>
     </NavbarBrand>
   );
-}
+};

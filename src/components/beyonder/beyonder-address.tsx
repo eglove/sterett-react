@@ -1,6 +1,6 @@
 import { MapIcon } from "@heroicons/react/24/outline";
 
-export function BeyonderAddress() {
+export const BeyonderAddress = () => {
   return (
     <div className="flex items-center gap-2">
       <MapIcon
@@ -17,4 +17,4 @@ export function BeyonderAddress() {
       </div>
     </div>
   );
-}
+};

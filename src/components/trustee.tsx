@@ -15,7 +15,7 @@ type TrusteeProperties = {
 
 const IMAGE_SIZE = 128;
 
-export function Trustee({ index, trustee }: TrusteeProperties) {
+export const Trustee = ({ index, trustee }: TrusteeProperties) => {
   const colorValues: AvatarProps["color"][] = shuffle([
     "warning",
     "secondary",
@@ -64,4 +64,4 @@ export function Trustee({ index, trustee }: TrusteeProperties) {
       />
     </div>
   );
-}
+};

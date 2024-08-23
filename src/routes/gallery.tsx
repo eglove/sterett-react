@@ -15,25 +15,7 @@ export const galleryRouteQueries = {
   images: getGalleryImagesQueryOptions(),
 };
 
-export const galleryRoute = createRoute({
-  beforeLoad() {
-    setMeta({
-      description: "Pictures from Sterett Creek Village Trustee",
-      title: "Sterett Creek Village Trustee | Gallery",
-    });
-  },
-  component: GalleryRoute,
-  errorComponent: EmptyContent,
-  getParentRoute() {
-    return rootRoute;
-  },
-  async loader() {
-    return getRouteQueries(galleryRouteQueries);
-  },
-  path: "/gallery",
-});
-
-export function GalleryRoute() {
+export const GalleryRoute = () => {
   const { data } = useSuspenseQuery(galleryRouteQueries.images);
 
   return (
@@ -54,4 +36,22 @@ export function GalleryRoute() {
       </Container>
     </MainLayout>
   );
-}
+};
+
+export const galleryRoute = createRoute({
+  beforeLoad() {
+    setMeta({
+      description: "Pictures from Sterett Creek Village Trustee",
+      title: "Sterett Creek Village Trustee | Gallery",
+    });
+  },
+  component: GalleryRoute,
+  errorComponent: EmptyContent,
+  getParentRoute() {
+    return rootRoute;
+  },
+  async loader() {
+    return getRouteQueries(galleryRouteQueries);
+  },
+  path: "/gallery",
+});

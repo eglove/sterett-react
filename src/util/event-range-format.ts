@@ -2,7 +2,7 @@ import { DateTime } from "luxon";
 
 import { AMERICA_CHICAGO } from "./date.ts";
 
-export function eventRangeFormat(start: string, end: string) {
+export const eventRangeFormat = (start: string, end: string) => {
   const startDate = DateTime.fromISO(start, {
     zone: AMERICA_CHICAGO,
   });
@@ -24,4 +24,4 @@ export function eventRangeFormat(start: string, end: string) {
     dateStyle: "medium",
     timeStyle: "short",
   })}`;
-}
+};

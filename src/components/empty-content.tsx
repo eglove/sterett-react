@@ -1,7 +1,7 @@
 import { Container } from "./container.tsx";
 import { MainLayout } from "./layouts/main-layout.tsx";
 
-export function EmptyContent() {
+export const EmptyContent = () => {
   return (
     <MainLayout>
       <Container>
@@ -11,4 +11,4 @@ export function EmptyContent() {
       </Container>
     </MainLayout>
   );
-}
+};

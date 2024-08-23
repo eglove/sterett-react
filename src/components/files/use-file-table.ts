@@ -11,7 +11,7 @@ import { useMemo, useState } from "react";
 
 import { filesRouteQueries } from "../../routes/files.tsx";
 
-export function useFileTable(query: keyof typeof filesRouteQueries) {
+export const useFileTable = (query: keyof typeof filesRouteQueries) => {
   const { data } = useSuspenseQuery(filesRouteQueries[query]);
   const [filter, setFilter] = useState("");
   const [sortConfig, setSortConfig] = useState<SortDescriptor>({
@@ -58,4 +58,4 @@ export function useFileTable(query: keyof typeof filesRouteQueries) {
     sortConfig,
     sortedData,
   };
-}
+};

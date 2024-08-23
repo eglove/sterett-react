@@ -10,7 +10,7 @@ import { eventRangeFormat } from "../util/event-range-format.ts";
 import { AddToCalendar } from "./add-to-calendar.tsx";
 import { SanityContent } from "./sanity/sanity-content.tsx";
 
-export function UpcomingEvents() {
+export const UpcomingEvents = () => {
   const { data: events } = useSuspenseQuery(indexRouteQueries.events);
 
   return (
@@ -59,4 +59,4 @@ export function UpcomingEvents() {
       })}
     </Accordion>
   );
-}
+};

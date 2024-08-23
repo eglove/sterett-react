@@ -8,15 +8,15 @@ import {
   sterettSanityClient,
 } from "../../clients/sanity/sanity-client.ts";
 
-export async function getGeneralCovenantFiles() {
+export const getGeneralCovenantFiles = async () => {
   const filesQuery = `*[_type == "documentUpload" && (category == "General" || category == "Covenant") && ${NO_DRAFTS}] | order(date desc){_id, title, category, date, file{asset->{url}}}`;
 
   return sterettSanityClient.fetch<GetFilesSchema[]>(filesQuery);
-}
+};
 
-export function getGeneralCovenantFilesQueryOptions() {
+export const getGeneralCovenantFilesQueryOptions = () => {
   return queryOptions({
     queryFn: getGeneralCovenantFiles,
     queryKey: [queryKeys.sterett, queryKeys.getGeneralCovenantFiles],
   });
-}
+};

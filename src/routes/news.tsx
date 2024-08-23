@@ -24,25 +24,7 @@ export const newsRouteQueries = {
   newsAndEvents: getNewsAndEventsQueryOptions(),
 };
 
-export const newsRoute = createRoute({
-  beforeLoad() {
-    setMeta({
-      description: "News and Event Updates for Sterett Creek Village Trustee",
-      title: "Sterett Creek Village Trustee | News",
-    });
-  },
-  component: NewsRoute,
-  errorComponent: EmptyContent,
-  getParentRoute: () => {
-    return rootRoute;
-  },
-  async loader() {
-    return getRouteQueries(newsRouteQueries);
-  },
-  path: "/news",
-});
-
-export function NewsRoute() {
+export const NewsRoute = () => {
   const { data } = useSuspenseQuery(newsRouteQueries.newsAndEvents);
   const [usedDates, setUsedDates] = useState(new Set());
 
@@ -77,4 +59,22 @@ export function NewsRoute() {
       </Container>
     </MainLayout>
   );
-}
+};
+
+export const newsRoute = createRoute({
+  beforeLoad() {
+    setMeta({
+      description: "News and Event Updates for Sterett Creek Village Trustee",
+      title: "Sterett Creek Village Trustee | News",
+    });
+  },
+  component: NewsRoute,
+  errorComponent: EmptyContent,
+  getParentRoute: () => {
+    return rootRoute;
+  },
+  async loader() {
+    return getRouteQueries(newsRouteQueries);
+  },
+  path: "/news",
+});

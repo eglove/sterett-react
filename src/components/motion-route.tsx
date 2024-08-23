@@ -20,7 +20,7 @@ const pageTransition = {
   },
 } satisfies AnimationProps["variants"];
 
-export function MotionRoute({ children }: Readonly<PropsWithChildren>) {
+export const MotionRoute = ({ children }: Readonly<PropsWithChildren>) => {
   return (
     <motion.div
       animate="visible"
@@ -31,4 +31,4 @@ export function MotionRoute({ children }: Readonly<PropsWithChildren>) {
       {children}
     </motion.div>
   );
-}
+};

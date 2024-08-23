@@ -11,10 +11,10 @@ type SanityPortableImageProperties = {
   readonly image: ImageAsset;
 };
 
-export function SanityPortableImage({
+export const SanityPortableImage = ({
   altText,
   image,
-}: SanityPortableImageProperties) {
+}: SanityPortableImageProperties) => {
   const imageUrl = sanityImage
     .image(image.url)
     .maxWidth(IMAGE_SIZE)
@@ -35,4 +35,4 @@ export function SanityPortableImage({
       />
     </div>
   );
-}
+};

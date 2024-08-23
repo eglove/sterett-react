@@ -10,9 +10,9 @@ type CalendarModalContentProperties = {
   readonly selectedEvent: CalendarComponentEvent;
 };
 
-export function CalendarModalContent({
+export const CalendarModalContent = ({
   selectedEvent,
-}: CalendarModalContentProperties) {
+}: CalendarModalContentProperties) => {
   return (
     <>
       <div>
@@ -41,4 +41,4 @@ export function CalendarModalContent({
         <SanityContent value={selectedEvent.description} />}
     </>
   );
-}
+};

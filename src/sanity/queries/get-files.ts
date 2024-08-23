@@ -18,7 +18,7 @@ export type GetFilesSchema = {
   title: string;
 };
 
-export async function getFiles() {
+export const getFiles = async () => {
   const generalQuery = `*[_type == "documentUpload" && category == "General" && ${NO_DRAFTS}] | order(date desc){_id, title, file{asset->{url}}}`;
   const covenantsQuery = `*[_type == "documentUpload" && category == "Covenant" && ${NO_DRAFTS}] | order(date desc){_id, title, file{asset->{url}}}`;
   const meetingMinutesQuery = `*[_type == "documentUpload" && category == "Meeting Minute" && ${NO_DRAFTS}] | order(date desc){_id, title, file{asset->{url}}}`;
@@ -34,11 +34,11 @@ export async function getFiles() {
     general: data[0],
     meetingMinutes: data[2],
   };
-}
+};
 
-export function getFilesQueryOptions() {
+export const getFilesQueryOptions = () => {
   return queryOptions({
     queryFn: getFiles,
     queryKey: [queryKeys.sterett, queryKeys.getfiles],
   });
-}
+};

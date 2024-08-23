@@ -18,17 +18,15 @@ import { openNewTab } from "../util/url.ts";
 
 type AddToCalendarProperties = {
   readonly buttonProps?: Parameters<typeof Button>[0];
-  readonly classNames?: { button?: string };
   readonly description?: PortableTextBlock;
 } & Readonly<Omit<CalendarEvent, "description">>;
 
-// eslint-disable-next-line max-lines-per-function
-export function AddToCalendar({
+
+export const AddToCalendar = ({
   buttonProps,
-  classNames,
   description,
   ...rest
-}: AddToCalendarProperties) {
+}: AddToCalendarProperties) => {
   const handlePress = useCallback(
     (type: "google" | "ics" | "office365" | "outlook" | "yahoo") => {
       const data = {
@@ -141,4 +139,4 @@ export function AddToCalendar({
       </DropdownMenu>
     </Dropdown>
   );
-}
+};

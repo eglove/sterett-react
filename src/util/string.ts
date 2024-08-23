@@ -1,3 +1,3 @@
-export function noSlash(value: string) {
+export const noSlash = (value: string) => {
   return value.replaceAll("/", "");
-}
+};

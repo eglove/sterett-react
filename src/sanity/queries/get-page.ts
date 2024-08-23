@@ -11,7 +11,7 @@ type GetPageReturn = {
   title: string;
 }[];
 
-export async function getPage(slug: string) {
+export const getPage = async (slug: string) => {
   const pageQuery = `*[_type == "page" && slug.current == $slug]{
     _id, 
     title, 
@@ -38,13 +38,13 @@ export async function getPage(slug: string) {
   });
 
   return pages[0];
-}
+};
 
-export function getPageQueryOptions(slug: string) {
+export const getPageQueryOptions = (slug: string) => {
   return queryOptions({
     queryFn: async () => {
       return getPage(slug);
     },
     queryKey: [queryKeys.sterett, queryKeys.getPage, slug],
   });
-}
+};

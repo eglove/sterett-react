@@ -5,7 +5,7 @@ type LinkProperties = Readonly<
   Parameters<typeof NextUiLink>[0] & Partial<Parameters<typeof TanStackLink>[0]>
 >;
 
-export function Link(properties: LinkProperties) {
+export const Link = (properties: LinkProperties) => {
   const { href } = properties;
   return (
     <NextUiLink
@@ -15,4 +15,4 @@ export function Link(properties: LinkProperties) {
       to={href}
     />
   );
-}
+};

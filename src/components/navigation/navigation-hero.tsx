@@ -6,7 +6,7 @@ type NavigationHeroProperties = {
   readonly isMenuOpen: boolean;
 };
 
-export function NavigationHero({ isMenuOpen }: NavigationHeroProperties) {
+export const NavigationHero = ({ isMenuOpen }: NavigationHeroProperties) => {
   return (
     <NavbarContent className="pl-0">
       <NavbarMenuToggle
@@ -18,4 +18,4 @@ export function NavigationHero({ isMenuOpen }: NavigationHeroProperties) {
       <NavigationHome />
     </NavbarContent>
   );
-}
+};

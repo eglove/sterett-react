@@ -40,13 +40,13 @@ function dateIsInRange(start: string, end: string) {
   return now >= startDate && now <= endDate;
 }
 
-export function Event({
+export const Event = ({
   colors,
   data,
   iconMeta,
   setUsedDates,
   usedDates,
-}: EventProperties) {
+}: EventProperties) => {
   const isInRange = dateIsInRange(data.startsAt, data.endsAt);
   const relativeDate = getRelativeDate(data.startsAt);
   const [isDateShowing, setIsDateShowing] = useState(false);
@@ -127,4 +127,4 @@ export function Event({
       </Card>
     </Fragment>
   );
-}
+};

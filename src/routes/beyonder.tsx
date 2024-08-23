@@ -36,7 +36,7 @@ export const beyonderRoute = createRoute({
   path: "/beyonder",
 });
 
-export function BeyonderRoute() {
+export const BeyonderRoute = () => {
   const { data } = useSuspenseQuery(beyonderRouteQueries.events);
 
   return (
@@ -66,4 +66,4 @@ export function BeyonderRoute() {
       </Container>
     </MainLayout>
   );
-}
+};

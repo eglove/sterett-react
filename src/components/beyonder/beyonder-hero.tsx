@@ -1,7 +1,7 @@
 import { Image } from "@nextui-org/image";
 import toUpper from "lodash/toUpper";
 
-export function BeyonderHero() {
+export const BeyonderHero = () => {
   return (
     <div className="mx-4 mt-4 grid place-items-center">
       <Image
@@ -24,4 +24,4 @@ export function BeyonderHero() {
       </h4>
     </div>
   );
-}
+};
