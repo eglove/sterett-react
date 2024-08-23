@@ -18,24 +18,6 @@ export const beyonderRouteQueries = {
   events: getBeyonderEventsQueryOptions(),
 };
 
-export const beyonderRoute = createRoute({
-  beforeLoad() {
-    setMeta({
-      description: "Event Updates for Beyonder Camp",
-      title: "Beyonder Camp Events",
-    });
-  },
-  component: BeyonderRoute,
-  errorComponent: EmptyContent,
-  getParentRoute() {
-    return rootRoute;
-  },
-  async loader() {
-    return getRouteQueries(beyonderRouteQueries);
-  },
-  path: "/beyonder",
-});
-
 export const BeyonderRoute = () => {
   const { data } = useSuspenseQuery(beyonderRouteQueries.events);
 
@@ -67,3 +49,21 @@ export const BeyonderRoute = () => {
     </MainLayout>
   );
 };
+
+export const beyonderRoute = createRoute({
+  beforeLoad() {
+    setMeta({
+      description: "Event Updates for Beyonder Camp",
+      title: "Beyonder Camp Events",
+    });
+  },
+  component: BeyonderRoute,
+  errorComponent: EmptyContent,
+  getParentRoute() {
+    return rootRoute;
+  },
+  async loader() {
+    return getRouteQueries(beyonderRouteQueries);
+  },
+  path: "/beyonder",
+});
