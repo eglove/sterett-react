@@ -15,13 +15,13 @@ export const UpcomingEvents = () => {
 
   return (
     <Accordion
-      className="grid place-items-center border-2"
+      className="grid max-w-3xl place-items-center border-2"
     >
       {map(events, (event) => {
         return (
           <AccordionItem
             classNames={{
-              content: "p-0",
+              content: "prose",
               trigger: "px-2 py-0",
             }}
             title={
@@ -36,7 +36,7 @@ export const UpcomingEvents = () => {
               </p>
             }
             aria-label={event.title}
-            className="prose w-full"
+            className="w-full"
             key={event._id}
           >
             <AddToCalendar
