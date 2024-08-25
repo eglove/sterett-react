@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@ethang/hooks": "^2.1.1",
-    "@ethang/toolbelt": "^3.8.3",
+    "@ethang/toolbelt": "^3.9.1",
     "@heroicons/react": "^2.1.5",
     "@nextui-org/react": "^2.4.6",
     "@portabletext/react": "^3.1.0",
