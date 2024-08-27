@@ -15,17 +15,17 @@
   ],
   "dependencies": {
     "@ethang/hooks": "^2.1.1",
-    "@ethang/toolbelt": "^3.9.2",
+    "@ethang/toolbelt": "^3.9.3",
     "@heroicons/react": "^2.1.5",
     "@nextui-org/react": "^2.4.6",
     "@portabletext/react": "^3.1.0",
     "@sanity/client": "^6.21.3",
     "@sanity/image-url": "^1.0.2",
-    "@tanstack/react-query": "^5.52.1",
-    "@tanstack/react-query-devtools": "^5.52.1",
-    "@tanstack/react-query-persist-client": "^5.52.1",
-    "@tanstack/react-router": "^1.50.1",
-    "@tanstack/router-devtools": "^1.50.1",
+    "@tanstack/react-query": "^5.52.2",
+    "@tanstack/react-query-devtools": "^5.52.2",
+    "@tanstack/react-query-persist-client": "^5.52.2",
+    "@tanstack/react-router": "^1.51.0",
+    "@tanstack/router-devtools": "^1.51.0",
     "calendar-link": "^2.7.0",
     "framer-motion": "^11.3.30",
     "idb-keyval": "^6.2.1",
@@ -40,8 +40,8 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@ethang/eslint-config": "^19.1.1",
-    "@ethang/project-builder": "^2.4.0",
+    "@ethang/eslint-config": "^19.2.0",
+    "@ethang/project-builder": "^2.5.0",
     "@portabletext/types": "^2.0.13",
     "@tailwindcss/typography": "^0.5.14",
     "@tsconfig/strictest": "^2.0.5",
@@ -60,7 +60,7 @@
     "rimraf": "^6.0.1",
     "tailwindcss": "^3.4.10",
     "typescript": "^5.5.4",
-    "typescript-eslint": "^8.2.0",
+    "typescript-eslint": "^8.3.0",
     "vite": "^5.4.2",
     "vite-plugin-pwa": "^0.20.1"
   }
