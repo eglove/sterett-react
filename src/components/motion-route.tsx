@@ -1,7 +1,6 @@
-import type { AnimationProps } from "framer-motion";
 import type { PropsWithChildren } from "react";
 
-import { motion } from "framer-motion";
+import { type AnimationProps, motion } from "framer-motion";
 
 const transition = { duration: 0.5 };
 

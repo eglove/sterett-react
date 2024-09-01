@@ -1,7 +1,6 @@
-import type { PortableTextReactComponents } from "@portabletext/react";
 import type { TypedObject } from "@portabletext/types";
 
-import { PortableText } from "@portabletext/react";
+import { PortableText, type PortableTextReactComponents } from "@portabletext/react";
 import isNil from "lodash/isNil.js";
 import { twMerge } from "tailwind-merge";
 

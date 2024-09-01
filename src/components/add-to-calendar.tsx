@@ -1,5 +1,4 @@
 import type { PortableTextBlock } from "@portabletext/types";
-import type { CalendarEvent } from "calendar-link";
 
 import { Button } from "@nextui-org/button";
 import { Image } from "@nextui-org/image";
@@ -10,7 +9,7 @@ import {
   DropdownTrigger,
 } from "@nextui-org/react";
 import { toPlainText } from "@portabletext/react";
-import { google, ics, office365, outlook, yahoo } from "calendar-link";
+import { type CalendarEvent, google, ics, office365, outlook, yahoo } from "calendar-link";
 import isNil from "lodash/isNil";
 import { useCallback } from "react";
 
