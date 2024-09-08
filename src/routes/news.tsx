@@ -3,7 +3,6 @@ import { createRoute } from "@tanstack/react-router";
 import isEmpty from "lodash/isEmpty.js";
 import isNil from "lodash/isNil.js";
 import map from "lodash/map";
-import { useState } from "react";
 
 import { Container } from "../components/container.tsx";
 import { EmptyContent } from "../components/empty-content.tsx";
@@ -21,7 +20,6 @@ export const newsRouteQueries = {
 
 export const NewsRoute = () => {
   const { data } = useSuspenseQuery(newsRouteQueries.newsAndEvents);
-  const [usedDates, setUsedDates] = useState(new Set());
 
   if (isEmpty(data)) {
     return <EmptyContent />;
@@ -45,8 +43,6 @@ export const NewsRoute = () => {
               <Event
                 data={datum as CalendarEventReturn}
                 key={datum._id}
-                setUsedDates={setUsedDates}
-                usedDates={usedDates}
               />
             );
           })}

@@ -2,6 +2,7 @@ import type { TypedObject } from "@portabletext/types";
 
 import { queryOptions } from "@tanstack/react-query";
 import isEmpty from "lodash/isEmpty.js";
+import map from "lodash/map";
 import { DateTime } from "luxon";
 
 import { queryKeys } from "../../clients/react-query/query-keys.ts";
@@ -9,12 +10,13 @@ import {
   NO_DRAFTS,
   sterettSanityClient,
 } from "../../clients/sanity/sanity-client.ts";
-import { AMERICA_CHICAGO } from "../../util/date.ts";
+import { AMERICA_CHICAGO, getRelativeDate } from "../../util/date.ts";
 
 export type CalendarEventReturn = {
   _id: string;
   description: TypedObject | TypedObject[];
   endsAt: string;
+  relativeStart: string;
   startsAt: string;
   title: string;
 };
@@ -57,9 +59,20 @@ export const getNewsAndEvents = async () => {
     sterettSanityClient.fetch<NewsUpdateReturn[]>(updateQuery),
   ]);
 
-  return sortNewsAndEvents({
+  const sorted = sortNewsAndEvents({
     events,
     updates,
+  });
+
+  return map(sorted, (item) => {
+    if ("startsAt" in item) {
+      return {
+        ...item,
+        relativeStart: getRelativeDate(item.startsAt),
+      };
+    }
+
+    return item;
   });
 };
 

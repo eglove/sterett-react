@@ -6,7 +6,7 @@
   "scripts": {
     "build": "rimraf dist && tsc -b && vite build",
     "dev": "vite",
-    "lint": "eslint \"src/**/*\" --fix --ignore-pattern src/components/event.tsx",
+    "lint": "eslint \"src/**/*\" --fix",
     "preview": "vite preview"
   },
   "browserslist": [
