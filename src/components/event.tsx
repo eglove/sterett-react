@@ -48,7 +48,7 @@ export const Event = ({
   const isInRange = dateIsInRange(data.startsAt, data.endsAt);
   const relativeDate = getRelativeDate(data.startsAt);
 
-  if (!relativeTimes.has(data.relativeStart)) {
+  if (!isNil(data.relativeStart) && !relativeTimes.has(data.relativeStart)) {
     relativeTimes.set(data.relativeStart, data._id);
   }
 

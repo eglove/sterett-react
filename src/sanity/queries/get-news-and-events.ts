@@ -16,7 +16,7 @@ export type CalendarEventReturn = {
   _id: string;
   description: TypedObject | TypedObject[];
   endsAt: string;
-  relativeStart: string;
+  relativeStart?: string;
   startsAt: string;
   title: string;
 };
