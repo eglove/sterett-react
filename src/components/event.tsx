@@ -30,12 +30,10 @@ type EventProperties = {
 const happeningNow = "Happening Now!";
 
 const dateIsInRange = (start: string, end: string) => {
-  const now = DateTime.now();
-  const startDate = DateTime.fromISO(start);
-  const endDate = DateTime.fromISO(end);
+  const startDiff = DateTime.fromISO(start).diffNow("minutes").minutes;
+  const endDiff = DateTime.fromISO(end).diffNow("minutes").minutes;
 
-  // eslint-disable-next-line sonar/values-not-convertible-to-numbers
-  return now >= startDate && now <= endDate;
+  return 0 >= startDiff !== 0 >= endDiff;
 };
 
 const relativeTimes = new Map<string, string>();
