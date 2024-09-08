@@ -32,8 +32,10 @@ const happeningNow = "Happening Now!";
 const dateIsInRange = (start: string, end: string) => {
   const startDiff = DateTime.fromISO(start).diffNow("minutes").minutes;
   const endDiff = DateTime.fromISO(end).diffNow("minutes").minutes;
+  const isStartInRange = 0 >= startDiff;
+  const isEndInRange = 0 >= endDiff;
 
-  return 0 >= startDiff !== 0 >= endDiff;
+  return isStartInRange !== isEndInRange;
 };
 
 const relativeTimes = new Map<string, string>();
