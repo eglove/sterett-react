@@ -29,7 +29,7 @@ type EventProperties = {
 
 const happeningNow = "Happening Now!";
 
-const dateIsInRange = (start: string, end: string) => {
+const getIsHappeningNow = (start: string, end: string) => {
   const startDiff = DateTime.fromISO(start).diffNow("minutes").minutes;
   const endDiff = DateTime.fromISO(end).diffNow("minutes").minutes;
   const isStartInRange = 0 >= startDiff;
@@ -45,7 +45,7 @@ export const Event = ({
   data,
   iconMeta,
 }: EventProperties) => {
-  const isInRange = dateIsInRange(data.startsAt, data.endsAt);
+  const isHappeningNow = getIsHappeningNow(data.startsAt, data.endsAt);
   const relativeDate = getRelativeDate(data.startsAt);
 
   if (!isNil(data.relativeStart) && !relativeTimes.has(data.relativeStart)) {
@@ -67,7 +67,7 @@ export const Event = ({
             className={twMerge("text-lg font-bold", backgroundColor, textColor)}
           >
             <CardBody>
-              {isInRange
+              {isHappeningNow
                 ? happeningNow
                 : getRelativeDate(data.startsAt)}
             </CardBody>
