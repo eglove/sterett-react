@@ -39,6 +39,6 @@ export const getFiles = async () => {
 export const getFilesQueryOptions = () => {
   return queryOptions({
     queryFn: getFiles,
-    queryKey: [queryKeys.sterett, queryKeys.getfiles],
+    queryKey: [queryKeys.sterett, queryKeys.getFiles],
   });
 };
