@@ -10,6 +10,7 @@ import { UpcomingEvents } from "../components/upcoming-events.tsx";
 import { rootRoute } from "../router/router.ts";
 import { getEventsQueryOptions } from "../sanity/queries/get-events.ts";
 import { getGalleryImagesCountQueryOptions } from "../sanity/queries/get-gallery-images-count.ts";
+import { getNewsAndEventsQueryOptions } from "../sanity/queries/get-news-and-events.ts";
 import { getPageQueryOptions } from "../sanity/queries/get-page.ts";
 import { getRouteQueries } from "../util/get-route-queries.ts";
 import { setMeta } from "../util/set-meta.ts";
@@ -17,6 +18,7 @@ import { setMeta } from "../util/set-meta.ts";
 export const indexRouteQueries = {
   events: getEventsQueryOptions(),
   galleryImagesCount: getGalleryImagesCountQueryOptions(),
+  newsAndEvents: getNewsAndEventsQueryOptions(),
   pageData: getPageQueryOptions("home"),
 };
 

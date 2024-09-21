@@ -13,7 +13,7 @@ type NewsUpdateProperties = {
 export const NewsUpdate = ({ data }: NewsUpdateProperties) => {
   return (
     <Card
-      className="h-max w-full"
+      className="my-4 h-max w-full"
       id={data._id}
     >
       <CardHeader className="block">

@@ -11,44 +11,51 @@ import { AddToCalendar } from "./add-to-calendar.tsx";
 import { SanityContent } from "./sanity/sanity-content.tsx";
 
 export const UpcomingEvents = () => {
-  const { data: events } = useSuspenseQuery(indexRouteQueries.events);
-
+  const { data: events } = useSuspenseQuery(indexRouteQueries.newsAndEvents);
   return (
     <Accordion
       className="grid max-w-3xl place-items-center border-2"
     >
       {map(events, (event) => {
+        const hasDates = "startsAt" in event && "endsAt" in event;
+
         return (
           <AccordionItem
             classNames={{
               content: "prose",
-              trigger: "px-2 py-0",
+              trigger: `px-2 py-0 ${hasDates
+                ? ""
+                : "font-bold py-2"}`,
             }}
             title={
               <p>
                 <strong>
                   {event.title}
                 </strong>
-                <br />
-                <span>
-                  {eventRangeFormat(event.startsAt, event.endsAt)}
-                </span>
+                {hasDates &&
+                  <>
+                    <br />
+                    <span>
+                      {eventRangeFormat(event.startsAt, event.endsAt)}
+                    </span>
+                  </>}
               </p>
             }
             aria-label={event.title}
             className="w-full"
             key={event._id}
           >
-            <AddToCalendar
-              buttonProps={{
-                className: "bg-sky-600 text-white mb-4",
-                size: "sm",
-              }}
-              description={event.description as unknown as PortableTextBlock}
-              end={event.endsAt}
-              start={event.startsAt}
-              title={event.title}
-            />
+            {hasDates &&
+              <AddToCalendar
+                buttonProps={{
+                  className: "bg-sky-600 text-white mb-4",
+                  size: "sm",
+                }}
+                description={event.description as unknown as PortableTextBlock}
+                end={event.endsAt}
+                start={event.startsAt}
+                title={event.title}
+              />}
             {!isNil(event.description) &&
               <SanityContent
                 styleNames="mb-2"
