@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@ethang/hooks':
-        specifier: ^2.2.3
-        version: 2.2.3(@ethang/toolbelt@4.3.0(@phensley/cldr@1.9.0)(@phensley/unit-converter@1.9.0)(@tanstack/store@0.5.5)(@total-typescript/ts-reset@0.6.1)(idb@8.0.0)(immer@10.1.1)(lodash@4.17.21)(uuid@10.0.0)(zod@3.23.8))(lodash@4.17.21)(react@18.3.1)(use-sync-external-store@1.2.2(react@18.3.1))(zod@3.23.8)
+        specifier: ^2.2.4
+        version: 2.2.4(@ethang/toolbelt@4.3.0(@phensley/cldr@1.9.0)(@phensley/unit-converter@1.9.0)(@tanstack/store@0.5.5)(@total-typescript/ts-reset@0.6.1)(idb@8.0.0)(immer@10.1.1)(lodash@4.17.21)(uuid@10.0.0)(zod@3.23.8))(lodash@4.17.21)(react@18.3.1)(use-sync-external-store@1.2.2(react@18.3.1))(zod@3.23.8)
       '@ethang/toolbelt':
         specifier: ^4.3.0
         version: 4.3.0(@phensley/cldr@1.9.0)(@phensley/unit-converter@1.9.0)(@tanstack/store@0.5.5)(@total-typescript/ts-reset@0.6.1)(idb@8.0.0)(immer@10.1.1)(lodash@4.17.21)(uuid@10.0.0)(zod@3.23.8)
@@ -1445,8 +1445,8 @@ packages:
       typescript: ^5.6.2
       typescript-eslint: ^8.6.0
 
-  '@ethang/hooks@2.2.3':
-    resolution: {integrity: sha512-zeWHFznj+o9hgFR074VtxnwMpd7ymhDY1gqFHJW2FCLFZ7FnIzU9yH6qtzkSDP2hq1/sobhVzLGg34qjt3Gl7w==}
+  '@ethang/hooks@2.2.4':
+    resolution: {integrity: sha512-WyAp5jga6r/m/xxBz+dqvejLD4tixUsZJWeWeVr9QKLSrBsHTdSqbDpyKYC/Cbo0ov6ylXNKPp0woBekOe1KVg==}
     engines: {node: '> 20.0'}
     peerDependencies:
       '@ethang/toolbelt': ^4.3.0
@@ -8324,7 +8324,7 @@ snapshots:
       typescript: 5.6.2
       typescript-eslint: 8.6.0(eslint@9.11.0(jiti@1.21.6))(typescript@5.6.2)
 
-  '@ethang/hooks@2.2.3(@ethang/toolbelt@4.3.0(@phensley/cldr@1.9.0)(@phensley/unit-converter@1.9.0)(@tanstack/store@0.5.5)(@total-typescript/ts-reset@0.6.1)(idb@8.0.0)(immer@10.1.1)(lodash@4.17.21)(uuid@10.0.0)(zod@3.23.8))(lodash@4.17.21)(react@18.3.1)(use-sync-external-store@1.2.2(react@18.3.1))(zod@3.23.8)':
+  '@ethang/hooks@2.2.4(@ethang/toolbelt@4.3.0(@phensley/cldr@1.9.0)(@phensley/unit-converter@1.9.0)(@tanstack/store@0.5.5)(@total-typescript/ts-reset@0.6.1)(idb@8.0.0)(immer@10.1.1)(lodash@4.17.21)(uuid@10.0.0)(zod@3.23.8))(lodash@4.17.21)(react@18.3.1)(use-sync-external-store@1.2.2(react@18.3.1))(zod@3.23.8)':
     dependencies:
       '@ethang/toolbelt': 4.3.0(@phensley/cldr@1.9.0)(@phensley/unit-converter@1.9.0)(@tanstack/store@0.5.5)(@total-typescript/ts-reset@0.6.1)(idb@8.0.0)(immer@10.1.1)(lodash@4.17.21)(uuid@10.0.0)(zod@3.23.8)
       lodash: 4.17.21

@@ -14,7 +14,7 @@
     "maintained node versions"
   ],
   "dependencies": {
-    "@ethang/hooks": "^2.2.3",
+    "@ethang/hooks": "^2.2.4",
     "@ethang/toolbelt": "^4.3.0",
     "@heroicons/react": "^2.1.5",
     "@nextui-org/react": "^2.4.8",
