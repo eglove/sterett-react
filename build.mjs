@@ -1,6 +1,6 @@
 import { projectBuilder } from "@ethang/project-builder/project-builder.js";
 
 await projectBuilder("sterett-react", "main", {
-	scripts: ["UPDATE", "DEDUPE", "LINT", "BUILD"],
-	isLibrary: false,
+  isLibrary: false,
+  scripts: ["bun x taze latest -I", "bun lint", "bun run build"],
 });
