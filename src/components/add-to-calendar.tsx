@@ -20,7 +20,6 @@ type AddToCalendarProperties = {
   readonly description?: PortableTextBlock;
 } & Readonly<Omit<CalendarEvent, "description">>;
 
-
 export const AddToCalendar = ({
   buttonProps,
   description,

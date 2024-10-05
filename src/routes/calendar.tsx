@@ -25,7 +25,6 @@ export const calendarRouteQueries = {
   calendarEvents: getCalendarEventsQueryOptions(),
 };
 
-
 export type CalendarComponentEvent = {
   description?: TypedObject | TypedObject[];
   end: Date;

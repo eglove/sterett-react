@@ -15,7 +15,6 @@ export const filesRouteQueries = {
   meetingMinutesFiles: getMeetingMinutesFilesQueryOptions(),
 };
 
-
 export const FilesRoute = () => {
   return (
     <MainLayout>
