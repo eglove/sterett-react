@@ -40,7 +40,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@ethang/eslint-config": "^19.11.3",
+    "@ethang/eslint-config": "^19.11.4",
     "@ethang/project-builder": "^3.0.1",
     "@portabletext/types": "^2.0.13",
     "@tailwindcss/typography": "^0.5.15",
