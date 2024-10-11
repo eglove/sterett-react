@@ -27,7 +27,7 @@
     "@tanstack/react-router": "^1.64.0",
     "@tanstack/router-devtools": "^1.64.0",
     "calendar-link": "^2.7.0",
-    "framer-motion": "^11.11.7",
+    "framer-motion": "^11.11.8",
     "idb-keyval": "^6.2.1",
     "lodash": "^4.17.21",
     "luxon": "^3.5.0",
@@ -40,7 +40,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@ethang/eslint-config": "^19.11.4",
+    "@ethang/eslint-config": "^19.11.5",
     "@ethang/project-builder": "^3.0.1",
     "@portabletext/types": "^2.0.13",
     "@tailwindcss/typography": "^0.5.15",
