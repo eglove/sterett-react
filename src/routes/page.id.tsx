@@ -41,7 +41,6 @@ export const pageIdRoute = createRoute({
     return rootRoute;
   },
   async loader(context) {
-    // @ts-expect-error router type issues
     return queryClient.ensureQueryData(getPageQueryOptions(context.params.id));
   },
   path: "/page/$id",
