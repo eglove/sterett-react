@@ -32,9 +32,6 @@ export const HomeRoute = () => {
   return (
     <MainLayout>
       <Container>
-        <h2 className="text-2xl font-bold">
-          Upcoming Events
-        </h2>
         <UpcomingEvents />
         <SanityContent value={data.content} />
       </Container>
