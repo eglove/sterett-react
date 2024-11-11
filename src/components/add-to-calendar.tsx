@@ -41,20 +41,20 @@ export const AddToCalendar = ({
             openNewTab(google(data));
             break;
           }
-          case "outlook": {
-            openNewTab(outlook(data));
+          case "ics": {
+            openNewTab(ics(data));
             break;
           }
           case "office365": {
             openNewTab(office365(data));
             break;
           }
-          case "yahoo": {
-            openNewTab(yahoo(data));
+          case "outlook": {
+            openNewTab(outlook(data));
             break;
           }
-          case "ics": {
-            openNewTab(ics(data));
+          case "yahoo": {
+            openNewTab(yahoo(data));
             break;
           }
         }

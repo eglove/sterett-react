@@ -12,7 +12,7 @@ import { setMeta } from "../util/set-meta.ts";
 import { queryClient } from "./root.tsx";
 
 export const PageIdRoute = () => {
-  const { id } = pageIdRoute.useParams();
+  const { id } = pageIdRoute.useParams() as unknown as { id: string };
   const { data } = useSuspenseQuery(getPageQueryOptions(id));
 
   if (isNil(data)) {
