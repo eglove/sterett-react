@@ -15,7 +15,7 @@
   ],
   "dependencies": {
     "@ethang/hooks": "^2.2.6",
-    "@ethang/toolbelt": "^4.3.0",
+    "@ethang/toolbelt": "^4.3.1",
     "@heroicons/react": "^2.1.5",
     "@nextui-org/react": "^2.4.8",
     "@portabletext/react": "^3.1.0",
@@ -25,8 +25,8 @@
     "@tanstack/react-query": "^5.59.20",
     "@tanstack/react-query-devtools": "^5.59.20",
     "@tanstack/react-query-persist-client": "^5.59.20",
-    "@tanstack/react-router": "^1.79.0",
-    "@tanstack/router-devtools": "^1.79.0",
+    "@tanstack/react-router": "^1.81.1",
+    "@tanstack/router-devtools": "^1.81.1",
     "calendar-link": "^2.7.0",
     "framer-motion": "^11.11.11",
     "idb-keyval": "^6.2.1",
@@ -41,7 +41,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@ethang/eslint-config": "^19.14.10",
+    "@ethang/eslint-config": "^19.15.0",
     "@ethang/project-builder": "^3.0.1",
     "@portabletext/types": "^2.0.13",
     "@tailwindcss/typography": "^0.5.15",
@@ -56,7 +56,7 @@
     "@vitejs/plugin-react": "^4.3.3",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.14.0",
-    "postcss": "^8.4.47",
+    "postcss": "^8.4.48",
     "prettier": "^3.3.3",
     "rimraf": "^6.0.1",
     "tailwindcss": "^3.4.14",
